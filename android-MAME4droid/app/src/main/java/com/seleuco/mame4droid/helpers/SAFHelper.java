@@ -390,8 +390,8 @@ public class SAFHelper {
                     @Override
                     public void run() {
                         mm.getDialogHelper().setInfoMsg(
-                                R.string.no_permission_read_rom_1 + mm.getPrefsHelper().getROMsDIR() +
-                                        R.string.no_permission_read_rom_2);
+                                mm.getString(R.string.no_permission_read_rom_1) + mm.getPrefsHelper().getROMsDIR() +
+                                        mm.getString(R.string.no_permission_read_rom_2));
                         mm.showDialog(DialogHelper.DIALOG_INFO);
                     }//public void run() {
                 });
