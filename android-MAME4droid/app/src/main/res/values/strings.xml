@@ -397,7 +397,7 @@
 
 	<string name="language_setting.title">Language Setting</string>
     <string name="custom_language">Custom Language</string>
-    <string name="custom_language_summary">Enable it to selecct language(disable it to follow the system language).</string>
+    <string name="custom_language_summary">Enable it to select language(disable it to follow the system language).</string>
     <string name="select_language">Select Language</string>
     <string name="select_language_summary">Choose your preferred language</string>
 
