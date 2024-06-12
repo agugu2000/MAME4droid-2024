@@ -47,6 +47,8 @@ package com.seleuco.mame4droid.render;
 import android.graphics.Color;
 import android.opengl.GLES32;
 import android.opengl.Matrix;
+import android.content.Context;
+import com.seleuco.mame4droid.R;
 
 import android.opengl.GLSurfaceView.Renderer;
 import android.util.Log;
@@ -67,6 +69,8 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 public class GLRendererES32 implements Renderer, IGLRenderer {
+
+	private Context context;
 
 	private static final int FILTER_ON = 1;
 	private static final int FILTER_OFF = 2;
@@ -166,6 +170,11 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 		fillShaderConfs();
 	}
 
+	public GLRendererES32(Context context) {
+		this.context = context; 
+		this.vertices = convertFloatArrayToFloatBuffer(vertexes_flipped);
+		this.texcoords = convertFloatArrayToFloatBuffer(tex_coords);
+	}
 	public GLRendererES32() {
 		this.vertices = convertFloatArrayToFloatBuffer(vertexes_flipped);
 		this.texcoords = convertFloatArrayToFloatBuffer(tex_coords);
@@ -212,7 +221,7 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 			);
 
 		if (vertexShader <= 0 || fragmentShader <= 0) {
-			new WarnWidget.WarnWidgetHelper(mm, "Error creating stock shaders!", 5, Color.RED, false);
+			new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.err_create_shaders), 5, Color.RED, false);
 			return;
 		}
 
@@ -228,7 +237,7 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 		GLES32.glUseProgram(this.stockProgram);
 
 		if (GLES32.glGetError() != GLES32.GL_NO_ERROR) {
-			new WarnWidget.WarnWidgetHelper(mm, "Error creating stock shader program!", 3, Color.RED, false);
+			new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.err_create_stock_shaders_program), 3, Color.RED, false);
 			return;
 		}
 
@@ -292,7 +301,7 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 			);
 
 		if (vertexShader <= 0 || fragmentShader <= 0) {
-			new WarnWidget.WarnWidgetHelper(mm, "Error creating effect shader... reverting to stock shader!", 3, Color.RED, false);
+			new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.err_create_shaders_reverting), 3, Color.RED, false);
 			return false;
 		}
 
@@ -311,7 +320,7 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 		final int error = GLES32.glGetError();
 		if (error != GLES32.GL_NO_ERROR) {
 			Log.e(TAG, "glError " + error);
-			new WarnWidget.WarnWidgetHelper(mm, "Error creating effect shader program!", 3, Color.RED, false);
+			new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.err_create_effect_shaders_program), 3, Color.RED, false);
 			return false;
 		}
 
@@ -408,7 +417,7 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 					isEffectProgramFailed = !createEffectShader(c.fileName, version);
 				} else {
 					isEffectProgramFailed = true;
-					new WarnWidget.WarnWidgetHelper(mm, "Not found shader configuration... reverting to stock shader!", 3, Color.RED, false);
+					new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.reverting_stock_shader), 3, Color.RED, false);
 				}
 			}
 
@@ -479,7 +488,7 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 
 		} catch (OutOfMemoryError e) {
 			if (!warn)
-				new WarnWidget.WarnWidgetHelper(mm, "Not enough memory to create texture!", 5, Color.RED, false);
+				new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.not_enough_memory_for_texture), 5, Color.RED, false);
 			warn = true;
 			return;
 		} catch (Throwable e) {
@@ -504,6 +513,6 @@ public class GLRendererES32 implements Renderer, IGLRenderer {
 		}
 
 		if (shaderConfs.size() == 0)
-			new WarnWidget.WarnWidgetHelper(mm, "Error reading shader.cfg file!", 5, Color.RED, false);
+			new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.err_reading_shader_cfg), 5, Color.RED, false);
 	}
 }

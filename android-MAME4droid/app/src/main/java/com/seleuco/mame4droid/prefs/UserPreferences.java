@@ -72,7 +72,19 @@ import com.seleuco.mame4droid.helpers.ScraperHelper;
 import com.seleuco.mame4droid.input.ControlCustomizer;
 import com.seleuco.mame4droid.input.GameController;
 
+import com.seleuco.mame4droid.prefs.LanguageSwitchActivity; 
+
 public class UserPreferences extends PreferenceActivity implements OnSharedPreferenceChangeListener {
+	
+	private Context context;
+
+    public UserPreferences() {
+
+    }
+
+	public UserPreferences(Context context) {
+	this.context = context; 
+	}
 
 	private SharedPreferences settings;
 
@@ -108,6 +120,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
+		LanguageSwitchActivity.updateLanguage(this); 
 
 		addPreferencesFromResource(R.xml.userpreferences);
 
@@ -150,34 +163,38 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 	    protected void onResume() {
 	        super.onResume();
 	        boolean enable;
+
+			LanguageSwitchActivity.updateLanguage(this);
+			setTitle(R.string.settings_label);
+
 	        // Setup the initial values
 	        //mCheckBoxPreference.setSummary(sharedPreferences.getBoolean(key, false) ? "Disable this setting" : "Enable this setting");
-	        mPrefGlobalVideoRenderMode.setSummary("Current value is '" + mPrefGlobalVideoRenderMode.getEntry()+"'");
+	        mPrefGlobalVideoRenderMode.setSummary(getString(R.string.current_value_string) + mPrefGlobalVideoRenderMode.getEntry()+"'");
 
-	        mPrefResolution.setSummary("Current value is '" + mPrefResolution.getEntry()+"'");
-		    mPrefOSDResolution.setSummary("Current value is '" + mPrefOSDResolution.getEntry()+"'");
-	        mPrefPortraitMode.setSummary("Current value is '" + mPrefPortraitMode.getEntry()+"'");
-	        mPrefLandsMode.setSummary("Current value is '" + mPrefLandsMode.getEntry()+"'");
-			mPrefOverlay.setSummary("Current value is '" + mPrefOverlay.getEntry()+"'");
-		    mPrefOrientation.setSummary("Current value is '" + mPrefOrientation.getEntry()+"'");
+	        mPrefResolution.setSummary(getString(R.string.current_value_string) + mPrefResolution.getEntry()+"'");
+		    mPrefOSDResolution.setSummary(getString(R.string.current_value_string) + mPrefOSDResolution.getEntry()+"'");
+	        mPrefPortraitMode.setSummary(getString(R.string.current_value_string) + mPrefPortraitMode.getEntry()+"'");
+	        mPrefLandsMode.setSummary(getString(R.string.current_value_string) + mPrefLandsMode.getEntry()+"'");
+			mPrefOverlay.setSummary(getString(R.string.current_value_string) + mPrefOverlay.getEntry()+"'");
+		    mPrefOrientation.setSummary(getString(R.string.current_value_string) + mPrefOrientation.getEntry()+"'");
 
-	        mPrefControllerType.setSummary("Current value is '" + mPrefControllerType.getEntry()+"'");
+	        mPrefControllerType.setSummary(getString(R.string.current_value_string) + mPrefControllerType.getEntry()+"'");
 
-	        mPrefAnalogDZ.setSummary("Current value is '" + mPrefAnalogDZ.getEntry()+"'");
-	        mPrefGamepadDZ.setSummary("Current value is '" + mPrefGamepadDZ.getEntry()+"'");
-	        mPrefTiltDZ.setSummary("Current value is '" + mPrefTiltDZ.getEntry()+"'");
-	        mPrefTiltNeutral.setSummary("Current value is '" + mPrefTiltNeutral.getEntry()+"'");
-	        mPrefSound.setSummary("Current value is '" + mPrefSound.getEntry()+"'");
-	        mPrefStickType.setSummary("Current value is '" + mPrefStickType.getEntry()+"'");
-	        mPrefNumButtons.setSummary("Current value is '" + mPrefNumButtons.getEntry()+"'");
-	        mPrefSizeButtons.setSummary("Current value is '" + mPrefSizeButtons.getEntry()+"'");
-		    mPrefAlphaButtons.setSummary("Current value is '" + mPrefAlphaButtons.getEntry()+"'");
-	        mPrefSizeStick.setSummary("Current value is '" + mPrefSizeStick.getEntry()+"'");
-	        mPrefMainThPr.setSummary("Current value is '" + mPrefMainThPr.getEntry()+"'");
-	        mPrefSoundEngine.setSummary("Current value is '" + mPrefSoundEngine.getEntry()+"'");
-	        mPrefNavbar.setSummary("Current value is '" + mPrefNavbar.getEntry()+"'");
-			mPrefInstPath.setSummary("Current value is '" + mPrefInstPath.getText()+"'");
-		    mPrefShader.setSummary("Current value is '" + mPrefShader.getEntry()+"'");
+	        mPrefAnalogDZ.setSummary(getString(R.string.current_value_string) + mPrefAnalogDZ.getEntry()+"'");
+	        mPrefGamepadDZ.setSummary(getString(R.string.current_value_string) + mPrefGamepadDZ.getEntry()+"'");
+	        mPrefTiltDZ.setSummary(getString(R.string.current_value_string) + mPrefTiltDZ.getEntry()+"'");
+	        mPrefTiltNeutral.setSummary(getString(R.string.current_value_string) + mPrefTiltNeutral.getEntry()+"'");
+	        mPrefSound.setSummary(getString(R.string.current_value_string) + mPrefSound.getEntry()+"'");
+	        mPrefStickType.setSummary(getString(R.string.current_value_string) + mPrefStickType.getEntry()+"'");
+	        mPrefNumButtons.setSummary(getString(R.string.current_value_string) + mPrefNumButtons.getEntry()+"'");
+	        mPrefSizeButtons.setSummary(getString(R.string.current_value_string) + mPrefSizeButtons.getEntry()+"'");
+		    mPrefAlphaButtons.setSummary(getString(R.string.current_value_string) + mPrefAlphaButtons.getEntry()+"'");
+	        mPrefSizeStick.setSummary(getString(R.string.current_value_string) + mPrefSizeStick.getEntry()+"'");
+	        mPrefMainThPr.setSummary(getString(R.string.current_value_string) + mPrefMainThPr.getEntry()+"'");
+	        mPrefSoundEngine.setSummary(getString(R.string.current_value_string) + mPrefSoundEngine.getEntry()+"'");
+	        mPrefNavbar.setSummary(getString(R.string.current_value_string) + mPrefNavbar.getEntry()+"'");
+			mPrefInstPath.setSummary(getString(R.string.current_value_string) + mPrefInstPath.getText()+"'");
+		    mPrefShader.setSummary(getString(R.string.current_value_string) + mPrefShader.getEntry()+"'");
 
 	        // Set up a listener whenever a key changes
 	        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
@@ -201,96 +218,96 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 	        else*/
 	        if (key.equals(PrefsHelper.PREF_PORTRAIT_SCALING_MODE))
 	        {
-	            mPrefPortraitMode.setSummary("Current value is '" + mPrefPortraitMode.getEntry()+"'");
+	            mPrefPortraitMode.setSummary(getString(R.string.current_value_string) + mPrefPortraitMode.getEntry()+"'");
 	        }
 	        else if(key.equals(PrefsHelper.PREF_LANDSCAPE_SCALING_MODE))
 	        {
-	        	mPrefLandsMode.setSummary("Current value is '" + mPrefLandsMode.getEntry()+"'");
+	        	mPrefLandsMode.setSummary(getString(R.string.current_value_string) + mPrefLandsMode.getEntry()+"'");
 	        }
 			else if(key.equals(PrefsHelper.PREF_OVERLAY))
 			{
-				mPrefOverlay.setSummary("Current value is '" + mPrefOverlay.getEntry()+"'");
+				mPrefOverlay.setSummary(getString(R.string.current_value_string) + mPrefOverlay.getEntry()+"'");
 			}
 			else if(key.equals(PrefsHelper.PREF_ORIENTATION))
 			{
-				mPrefOrientation.setSummary("Current value is '" + mPrefOrientation.getEntry()+"'");
+				mPrefOrientation.setSummary(getString(R.string.current_value_string) + mPrefOrientation.getEntry()+"'");
 			}
 	        else if(key.equals(PrefsHelper.PREF_CONTROLLER_TYPE))
 	        {
-	            mPrefControllerType.setSummary("Current values is '" + mPrefControllerType.getEntry()+"'");
+	            mPrefControllerType.setSummary(getString(R.string.current_values_string) + mPrefControllerType.getEntry()+"'");
 	        }
 	        else if(key.equals(PrefsHelper.PREF_GLOBAL_VIDEO_RENDER_MODE))
 	        {
-				mPrefGlobalVideoRenderMode.setSummary("Current value is '" + mPrefGlobalVideoRenderMode.getEntry()+"'");
+				mPrefGlobalVideoRenderMode.setSummary(getString(R.string.current_value_string) + mPrefGlobalVideoRenderMode.getEntry()+"'");
 				boolean enable = Integer.valueOf(mPrefGlobalVideoRenderMode.getValue()).intValue() ==PrefsHelper.PREF_RENDER_GL;
 	        }
 	        else if(key.equals(PrefsHelper.PREF_EMU_RESOLUTION))
 	        {
-	        	mPrefResolution.setSummary("Current value is '" + mPrefResolution.getEntry()+"'");
+	        	mPrefResolution.setSummary(getString(R.string.current_value_string) + mPrefResolution.getEntry()+"'");
 	        }
 			else if(key.equals(PrefsHelper.PREF_EMU_RESOLUTION_OSD))
 			{
-				mPrefOSDResolution.setSummary("Current value is '" + mPrefOSDResolution.getEntry()+"'");
+				mPrefOSDResolution.setSummary(getString(R.string.current_value_string) + mPrefOSDResolution.getEntry()+"'");
 			}
 	        else if(key.equals(PrefsHelper.PREF_ANALOG_DZ))
 	        {
-	        	mPrefAnalogDZ.setSummary("Current value is '" + mPrefAnalogDZ.getEntry()+"'");
+	        	mPrefAnalogDZ.setSummary(getString(R.string.current_value_string) + mPrefAnalogDZ.getEntry()+"'");
 	        }
 	        else if(key.equals(PrefsHelper.PREF_GAMEPAD_DZ))
 	        {
-	        	mPrefGamepadDZ.setSummary("Current value is '" + mPrefGamepadDZ.getEntry()+"'");
+	        	mPrefGamepadDZ.setSummary(getString(R.string.current_value_string) + mPrefGamepadDZ.getEntry()+"'");
 	        }
 	        else if(key.equals(PrefsHelper.PREF_TILT_DZ))
 	        {
-	        	mPrefTiltDZ.setSummary("Current value is '" + mPrefTiltDZ.getEntry()+"'");
+	        	mPrefTiltDZ.setSummary(getString(R.string.current_value_string) + mPrefTiltDZ.getEntry()+"'");
 	        }
 	        else if(key.equals(PrefsHelper.PREF_TILT_NEUTRAL))
 	        {
-	        	mPrefTiltNeutral.setSummary("Current value is '" + mPrefTiltNeutral.getEntry()+"'");
+	        	mPrefTiltNeutral.setSummary(getString(R.string.current_value_string) + mPrefTiltNeutral.getEntry()+"'");
 	        }
 		    else if(key.equals(PrefsHelper.PREF_EMU_SOUND))
 		    {
-		    	mPrefSound.setSummary("Current value is '" + mPrefSound.getEntry()+"'");
+		    	mPrefSound.setSummary(getString(R.string.current_value_string) + mPrefSound.getEntry()+"'");
 	        }
 		    else if(key.equals(PrefsHelper.PREF_STICK_TYPE))
 		    {
-		    	mPrefStickType.setSummary("Current value is '" + mPrefStickType.getEntry()+"'");
+		    	mPrefStickType.setSummary(getString(R.string.current_value_string) + mPrefStickType.getEntry()+"'");
 		    }
 		    else if(key.equals(PrefsHelper.PREF_NUMBUTTONS))
 		    {
-		    	mPrefNumButtons.setSummary("Current value is '" + mPrefNumButtons.getEntry()+"'");
+		    	mPrefNumButtons.setSummary(getString(R.string.current_value_string) + mPrefNumButtons.getEntry()+"'");
 		    }
 		    else if(key.equals(PrefsHelper.PREF_BUTTONS_SIZE))
 		    {
-		    	mPrefSizeButtons.setSummary("Current value is '" + mPrefSizeButtons.getEntry()+"'");
+		    	mPrefSizeButtons.setSummary(getString(R.string.current_value_string) + mPrefSizeButtons.getEntry()+"'");
 		    }
 			else if(key.equals(PrefsHelper.PREF_BUTTONS_ALPHA))
 			{
-				mPrefAlphaButtons.setSummary("Current value is '" + mPrefAlphaButtons.getEntry()+"'");
+				mPrefAlphaButtons.setSummary(getString(R.string.current_value_string) + mPrefAlphaButtons.getEntry()+"'");
 			}
 		    else if(key.equals(PrefsHelper.PREF_STICK_SIZE))
 		    {
-		    	mPrefSizeStick.setSummary("Current value is '" + mPrefSizeStick.getEntry()+"'");
+		    	mPrefSizeStick.setSummary(getString(R.string.current_value_string) + mPrefSizeStick.getEntry()+"'");
 		    }
 			else if(key.equals(PrefsHelper.PREF_MAIN_THREAD_PRIORITY))
 			{
-	            mPrefMainThPr.setSummary("Current value is '" + mPrefMainThPr.getEntry()+"'");
+	            mPrefMainThPr.setSummary(getString(R.string.current_value_string) + mPrefMainThPr.getEntry()+"'");
 			}
 		    else if(key.equals(PrefsHelper.PREF_SOUND_ENGINE))
 		    {
-	            mPrefSoundEngine.setSummary("Current value is '" + mPrefSoundEngine.getEntry()+"'");
+	            mPrefSoundEngine.setSummary(getString(R.string.current_value_string) + mPrefSoundEngine.getEntry()+"'");
 		    }
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_NAVBAR_MODE))
 		    {
-		    	mPrefNavbar.setSummary("Current value is '" + mPrefNavbar.getEntry()+"'");
+		    	mPrefNavbar.setSummary(getString(R.string.current_value_string) + mPrefNavbar.getEntry()+"'");
 		    }
 		    else if(key.equals(PrefsHelper.PREF_INSTALLATION_DIR))
 		    {
-		    	mPrefInstPath.setSummary("Current value is '" + mPrefInstPath.getText()+"'");
+		    	mPrefInstPath.setSummary(getString(R.string.current_value_string) + mPrefInstPath.getText()+"'");
 		    }
 			else if(key.equals(PrefsHelper.PREF_SHADER_EFFECT))
 			{
-				mPrefShader.setSummary("Current value is '" + mPrefShader.getEntry()+"'");
+				mPrefShader.setSummary(getString(R.string.current_value_string) + mPrefShader.getEntry()+"'");
 			}
 			else if(key.equals(PrefsHelper.PREF_SHADERS_ENABLED))
 			{
@@ -329,9 +346,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			}
 			else if (pref.getKey().equals("changeRomPath")) {
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure? (app restart needed)")
+			    	builder.setMessage(R.string.checkboxprefwithwarn_confirm)
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton(R.string.confirm_dialog_yes, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    					SharedPreferences.Editor editor =  settings.edit();
 		    					editor.putString(PrefsHelper.PREF_ROMsDIR, null);
@@ -340,7 +357,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    	                //android.os.Process.killProcess(android.os.Process.myPid());
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton(R.string.confirm_dialog_no, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -351,9 +368,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			else if (pref.getKey().equals("defaultsKeys")) {
 
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure to restore?")
+			    	builder.setMessage(R.string.confirm_restore)
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton(R.string.confirm_dialog_yes, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    					SharedPreferences.Editor editor =  settings.edit();
 
@@ -370,7 +387,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton(R.string.confirm_dialog_no, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -385,9 +402,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			else if (pref.getKey().equals("defaultControlLayout")) {
 
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure to restore?")
+			    	builder.setMessage(R.string.confirm_restore)
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton(R.string.confirm_dialog_yes, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    					SharedPreferences.Editor editor =  settings.edit();
 		    					editor.putString(PrefsHelper.PREF_DEFINED_CONTROL_LAYOUT, null);
@@ -395,7 +412,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    					editor.commit();
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton(R.string.confirm_dialog_no, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -406,9 +423,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			else if (pref.getKey().equals("defaultData")) {
 
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure to restore? This will remove all your MAME cfg and nvram files. This is useful to restore games to defaults to fixup mame key mappings.")
+			    	builder.setMessage(getString(R.string.confirm_restore)+getString(R.string.confirm_restore_warning))
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton(R.string.confirm_dialog_yes, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	        	SharedPreferences.Editor editor =  settings.edit();
 		    	       		editor.putBoolean(PrefsHelper.PREF_MAME_DEFAULTS, true);
@@ -416,7 +433,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    	    		Emulator.setNeedRestart(true);
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton(R.string.confirm_dialog_no, new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -455,7 +472,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			CharSequence[] cs = null;
 			CharSequence[] csv = null;
 
-			MainHelper mh = new MainHelper(null);
+			MainHelper mh = new MainHelper(null, this);
 
 			String path = getPreferenceScreen().getSharedPreferences().getString(
 				PrefsHelper.PREF_INSTALLATION_DIR, "");

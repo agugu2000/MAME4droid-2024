@@ -55,6 +55,7 @@ import android.util.Log;
 
 import com.seleuco.mame4droid.MAME4droid;
 import com.seleuco.mame4droid.widgets.WarnWidget;
+import com.seleuco.mame4droid.R;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -82,6 +83,7 @@ public class SAFHelper {
 	private static final String TAG = "SAF";
 
     protected MAME4droid mm = null;
+	private Context context;
 
 	static Uri uri = null;
     static protected Hashtable<String, String> fileIDs = null; //hago estatico para evitar reloads si la actividad se recrea
@@ -99,9 +101,10 @@ public class SAFHelper {
             uri = Uri.parse(uriStr);
     }
 
-    public SAFHelper(MAME4droid value) {
-        mm = value;
-    }
+	public SAFHelper(MAME4droid value, Context context) {
+		mm = value;
+		this.context = context; 
+	}
 
 	public ArrayList<String> getRomsFileNames(){
 		if (dirFiles == null) {//safety
@@ -289,7 +292,7 @@ public class SAFHelper {
 
     public boolean listUriFiles(Boolean reload) {
 
-		pw = new WarnWidget(mm,"Caching SAF files."," Reading, please wait...", Color.WHITE,false,false);
+		pw = new WarnWidget(mm,context.getString(R.string.listurifiles_warn_1),context.getString(R.string.listurifiles_warn_2), Color.WHITE,false,false);
 		pw.init();
 
         if (fileIDs != null && !reload) return true;
@@ -387,8 +390,8 @@ public class SAFHelper {
                     @Override
                     public void run() {
                         mm.getDialogHelper().setInfoMsg(
-                                "MAME4droid doesn't have permission to read the roms files on " + mm.getPrefsHelper().getROMsDIR() +
-                                        ".\n\nGive permissions again or select another ROMs folder, both in MAME4droid menu 'Options -> Settings -> General -> Change ROMs path'.");
+                                R.string.no_permission_read_rom_1 + mm.getPrefsHelper().getROMsDIR() +
+                                        R.string.no_permission_read_rom_2);
                         mm.showDialog(DialogHelper.DIALOG_INFO);
                     }//public void run() {
                 });

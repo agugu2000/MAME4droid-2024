@@ -60,8 +60,17 @@ import android.widget.TextView;
 import com.seleuco.mame4droid.R;
 import com.seleuco.mame4droid.input.GameController;
 import com.seleuco.mame4droid.input.InputHandler;
+import com.seleuco.mame4droid.prefs.LanguageSwitchActivity; 
 
 public class ListKeys extends ListActivity {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LanguageSwitchActivity.updateLanguage(this);
+    }
+
+	public static String[] emulatorInputLabels;
 
 	public static final String[] androidKeysLabels = {
 		/* 0 - 9*/
@@ -109,24 +118,26 @@ public class ListKeys extends ListActivity {
 		};
 
 
-	public static final String[] emulatorInputLabels = {
-        "Up",
-        "Down",
-        "Left",
-        "Right",
-        "Button A",
-        "Button B",
-        "Button C",
-        "Button D",
-        "Button E",
-        "Button F",
-		"Button G",
-		"Button H",
-        "Coin",
-        "Start",
-        "Exit",
-        "Option",
-	};
+    private void initializeEmulatorInputLabels() {
+        emulatorInputLabels = new String[]{
+            getString(R.string.input_label_up),
+            getString(R.string.input_label_down),
+            getString(R.string.input_label_left),
+            getString(R.string.input_label_right),
+            getString(R.string.input_label_button_a),
+            getString(R.string.input_label_button_b),
+            getString(R.string.input_label_button_c),
+            getString(R.string.input_label_button_d),
+            getString(R.string.input_label_button_e),
+            getString(R.string.input_label_button_f),
+            getString(R.string.input_label_button_g),
+            getString(R.string.input_label_button_h),
+            getString(R.string.input_label_coin),
+            getString(R.string.input_label_start),
+            getString(R.string.input_label_exit),
+            getString(R.string.input_label_option)
+        };
+    }
 
 	protected int emulatorInputIndex = 0;
 	protected int playerIndex = 0;
@@ -135,13 +146,16 @@ public class ListKeys extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 
+		LanguageSwitchActivity.updateLanguage(this); 
+
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
 				WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 
 		playerIndex = getIntent().getIntExtra("playerIndex", 0);
 
-		setTitle("MAME4droid Player "+(playerIndex+1)+" keys");
+		setTitle(getString(R.string.input_label_title_1)+(playerIndex+1)+getString(R.string.input_label_title_2));
 
+		initializeEmulatorInputLabels();
 		drawListAdapter();
 	}
 

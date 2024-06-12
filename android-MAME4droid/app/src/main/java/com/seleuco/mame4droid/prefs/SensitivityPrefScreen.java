@@ -69,8 +69,8 @@ public class SensitivityPrefScreen extends DialogPreference implements
         //maxValue = attrs.getAttributeIntValue("", "maxValue", 10);
 
         setDialogLayoutResource(R.layout.bar);
-        setPositiveButtonText("Save");
-        setNegativeButtonText("Cancel");
+        setPositiveButtonText(R.string.prefscreen_save);
+        setNegativeButtonText(R.string.prefscreen_cancel);
     }
 
     @Override

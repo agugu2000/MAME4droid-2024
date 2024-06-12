@@ -51,6 +51,7 @@ import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.widget.Toast;
+import android.content.Context;
 
 import com.seleuco.mame4droid.Emulator;
 import com.seleuco.mame4droid.MAME4droid;
@@ -58,10 +59,17 @@ import com.seleuco.mame4droid.helpers.DialogHelper;
 import com.seleuco.mame4droid.helpers.MainHelper;
 import com.seleuco.mame4droid.helpers.PrefsHelper;
 import com.seleuco.mame4droid.widgets.WarnWidget;
+import com.seleuco.mame4droid.R;
 
 import java.util.Arrays;
 
 public class GameController implements IController {
+	
+	private Context context;
+
+	public GameController(Context context) {
+	this.context = context; 
+	}
 
 	protected static Boolean fakeID = false;
 
@@ -687,7 +695,7 @@ public class GameController implements IController {
 		if(!joystickMotion) {
 			int dev = getDevice(event.getDevice(), true);
 			if(dev==-1) { //joystick generico no autodetectado
-				CharSequence text = "Detected generic controller. You should map it on settings! ";
+				CharSequence text = context.getString(R.string.detected_generic_controller);
 				new WarnWidget.WarnWidgetHelper(mm, text.toString(), 3, Color.YELLOW, true);
 				mm.getMainHelper().updateMAME4droid();
 			}
@@ -781,7 +789,7 @@ public class GameController implements IController {
 		final String name = device.getName();
 
 		if (Emulator.isDebug()) {
-			String msg = "Detected input device: " + name;
+			String msg = context.getString(R.string.detected_input_device) + name;
 			new WarnWidget.WarnWidgetHelper(mm, msg, 3, Color.GREEN, true);
 		}
 
@@ -1335,7 +1343,7 @@ public class GameController implements IController {
 			if (id == 1)
 				mm.getMainHelper().updateMAME4droid();
 
-			CharSequence text = "Detected " + desc + " controller as P" + id;
+			CharSequence text = context.getString(R.string.detected_input_device_as_p_msg1) + desc + context.getString(R.string.detected_input_device_as_p_msg2) + id;
 			new WarnWidget.WarnWidgetHelper(mm, text.toString(), 3, Color.GREEN, true);
 
 			return id - 1;

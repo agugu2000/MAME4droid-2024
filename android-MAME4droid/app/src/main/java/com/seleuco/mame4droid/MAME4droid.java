@@ -56,6 +56,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.preference.PreferenceManager;
+import android.content.Context;
+import java.util.Locale;
 
 import com.seleuco.mame4droid.helpers.DialogHelper;
 import com.seleuco.mame4droid.helpers.MainHelper;
@@ -67,12 +73,28 @@ import com.seleuco.mame4droid.input.GameController;
 import com.seleuco.mame4droid.input.InputHandler;
 import com.seleuco.mame4droid.views.IEmuView;
 import com.seleuco.mame4droid.views.InputView;
+import com.seleuco.mame4droid.input.GameController;
+import com.seleuco.mame4droid.input.Keyboard;
+import com.seleuco.mame4droid.input.Mouse;
+import com.seleuco.mame4droid.prefs.DefineKeys;
+import com.seleuco.mame4droid.prefs.UserPreferences;
+import com.seleuco.mame4droid.render.GLRendererES10;
+import com.seleuco.mame4droid.render.GLRendererES32;
 
 public class MAME4droid extends Activity {
 
 	protected View emuView = null;
 
 	protected InputView inputView = null;
+
+    protected Emulator emulator;
+    protected GameController gameController;
+    protected Keyboard keyboard;
+    protected Mouse mouse;
+    protected DefineKeys defineKeys;
+    protected UserPreferences userPreferences;
+    protected GLRendererES10 glRendererES10;
+    protected GLRendererES32 glRendererES32;
 
 	protected MainHelper mainHelper = null;
 	protected PrefsHelper prefsHelper = null;
@@ -122,6 +144,9 @@ public class MAME4droid extends Activity {
 
 		super.onCreate(savedInstanceState);
 
+		//init Languagesetting
+		updateLanguage(this);
+
 		//android.os.Debug.waitForDebugger();
 
 		Log.d("EMULATOR", "onCreate " + this);
@@ -132,15 +157,24 @@ public class MAME4droid extends Activity {
 
 		prefsHelper = new PrefsHelper(this);
 
-		dialogHelper = new DialogHelper(this);
+		dialogHelper = new DialogHelper(this, this);
 
-		mainHelper = new MainHelper(this);
+		mainHelper = new MainHelper(this, this);
 
-		safHelper = new SAFHelper(this);
+		safHelper = new SAFHelper(this, this);
 
-		scraperHelper = new ScraperHelper(this);
+		scraperHelper = new ScraperHelper(this, this);
 
 		inputHandler = new InputHandler(this);
+		
+		
+		gameController = new GameController(this);
+		keyboard = new Keyboard(this);
+		mouse = new Mouse(this);
+		defineKeys = new DefineKeys(this);
+		userPreferences = new UserPreferences(this);
+		glRendererES10 = new GLRendererES10(this);
+		glRendererES32 = new GLRendererES32(this);
 
 		mainHelper.detectDevice();
 
@@ -445,4 +479,34 @@ public class MAME4droid extends Activity {
 		}
 	}
 
+	private void updateLanguage(Context context) {
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		boolean customLanguage = prefs.getBoolean("custom_language", false);
+		String language = prefs.getString("language_selection", "en");
+
+		Locale locale;
+		if (customLanguage) {
+			switch (language) {
+				case "zh-CN":
+					locale = Locale.SIMPLIFIED_CHINESE; //don't know why should writer a case for switch chinese?
+					break;
+				case "zh-TW":
+					locale = Locale.TRADITIONAL_CHINESE; 
+					break;
+				default:
+					locale = new Locale(language);
+					break;
+			}
+		} else {
+			locale = context.getResources().getConfiguration().locale;
+		}
+
+		Locale currentLocale = getResources().getConfiguration().locale;
+		if (!currentLocale.equals(locale)) {
+			Locale.setDefault(locale);
+			Configuration config = new Configuration(getResources().getConfiguration());
+			config.locale = locale;
+			getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+		}
+	}
 }

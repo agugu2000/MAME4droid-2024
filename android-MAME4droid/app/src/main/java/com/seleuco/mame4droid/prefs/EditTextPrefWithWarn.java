@@ -52,6 +52,7 @@ import android.preference.EditTextPreference;
 import android.util.AttributeSet;
 
 import com.seleuco.mame4droid.Emulator;
+import com.seleuco.mame4droid.R;
 
 public class EditTextPrefWithWarn extends EditTextPreference {
 
@@ -76,16 +77,16 @@ public class EditTextPrefWithWarn extends EditTextPreference {
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Are you sure? (app restart needed)")
+        builder.setMessage(R.string.checkboxprefwithwarn_confirm)
                 .setCancelable(false)
-                .setPositiveButton("Yes",
+                .setPositiveButton(R.string.confirm_dialog_yes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 EditTextPrefWithWarn.super.onDialogClosed(true);
                                 Emulator.setNeedRestart(true);
                             }
                         })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.confirm_dialog_no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         EditTextPrefWithWarn.super.onDialogClosed(false);
                     }

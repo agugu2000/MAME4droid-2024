@@ -45,6 +45,7 @@
 package com.seleuco.mame4droid.prefs;
 
 import com.seleuco.mame4droid.Emulator;
+import com.seleuco.mame4droid.R;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -76,16 +77,16 @@ public class ListPrefWithWarn extends ListPreference {
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Are you sure? (app restart needed)")
+        builder.setMessage(R.string.checkboxprefwithwarn_confirm)
                 .setCancelable(false)
-                .setPositiveButton("Yes",
+                .setPositiveButton(R.string.confirm_dialog_yes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 ListPrefWithWarn.super.onDialogClosed(true);
                                 Emulator.setNeedRestart(true);
                             }
                         })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.confirm_dialog_no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         ListPrefWithWarn.super.onDialogClosed(false);
                     }

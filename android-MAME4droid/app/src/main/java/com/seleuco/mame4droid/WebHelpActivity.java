@@ -57,14 +57,25 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.seleuco.mame4droid.prefs.LanguageSwitchActivity; 
+
 public class WebHelpActivity extends Activity {
 
 	WebView lWebView = null;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LanguageSwitchActivity.updateLanguage(this);
+		setTitle(R.string.help_label);
+    }
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
+		LanguageSwitchActivity.updateLanguage(this); 
+
 		String path = null;//"/storage/emulated/0/ROMs/MAME4droid/";
 		setContentView(R.layout.webhelp);
 		Bundle extras = getIntent().getExtras();

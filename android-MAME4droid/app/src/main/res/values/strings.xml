@@ -6,5 +6,410 @@
     <string name="app_name">MAME4droid 2024</string>
     <string name="don_t_bother">Don\'t ask again</string>
 	<string name="mame_version">0.266</string>
+
+<!--
+	AndroidManifest
+-->	
+    <string name="settings_label">MAME4droid Settings</string>
+    <string name="help_label">MAME4droid Help</string>
+    <string name="define_keys_label">MAME4droid Define Keys</string>
+    <string name="player_keys_label">MAME4droid Player Keys</string>
+    <string name="select_key_label">Select Key</string>
+
+<!--
+	Main Ui String
+-->
+	<string name="configuration.title">Configuration</string>
+	<string name="emulation.title">Emulation</string>
+	<string name="emulation.summary">Select it to open emulation options</string>
+	<string name="emulated_resolution.title">Emulated resolution</string>
+	<string name="frontend_resolution.title">Frontend resolution</string>
+	<string name="only_one_processor.title">Only one processor</string>
+	<string name="only_one_processor.summary">Enable it so that games that use discrete sound like dkong don\'t hung. Disable it to get a great improvement in 3D games that are capable of taking advantage of several threads</string>
+	<string name="speed_hacks.title">Speed hacks</string>
+	<string name="speed_hacks.summary">Enable it to get better performance in games like K.Instinct, M.Kombat or CPS3. You should only enable it to play those games because other games may work poorly or not work.</string>
+	<string name="sound.title">Sound</string>
+	<string name="show_fps.title">Show FPS</string>
+	<string name="show_fps.summary">Enable it to turn FPS display on</string>
+	<string name="auto_frameskip.title">Auto frameskip</string>
+	<string name="auto_frameskip.summary">Enable it to turn auto frameskip on</string>
+	<string name="cheats.title">Cheats</string>
+	<string name="cheats.summary">Enables the reading of the cheat database</string>
+	<string name="hiscore.title">Hiscore</string>
+	<string name="hiscore.summary">Enable it to activate hiscore MAME plugin to save and restores high scores for games that did not originally save high scores in non-volatile memory</string>
+	<string name="input_macro.title">Input macro</string>
+	<string name="input_macro.summary">Enable it to allows you to trigger a sequence of emulated input actions with a key or button combination. Note: The plugin is available from MAME UI plugin options</string>
+	<string name="autofire.title">Autofire</string>
+	<string name="autofire.summary">Enable it to allows you to simulate repeatedly pressing an emulated button by holding down a key or button combination. Note: The plugin is available from MAME UI plugin options</string>
+	<string name="skip_game_info.title">Skip game info</string>
+	<string name="skip_game_info.summary">Forces to skip displaying the system info screen</string>
+	<string name="zoom_to_window.title">Zoom to window</string>
+	<string name="zoom_to_window.summary">Automatically zooms the emulated display so that portrait and landscape games use the entire device window. Disable if you use artwork to zoom into the screen area in MAME video options using fixed orientation and wide resolutions</string>
+	<string name="zoom_game_by_35percent.title">Zoom Game by 35%</string>
+	<string name="zoom_game_by_35percent.summary">Automatically zooms the emulated display by 35%. This useful to play with some 8 bits computers like ZX Spectrum or Amstrad CPC</string>
+	<string name="disable_drc.title">Disable DRC</string>
+	<string name="disable_drc.summary">Disable DRC (dynamic recompiler) CPU core if available for more performance on ARM64 since there is not native DRC. Enable it to test DRC C backend performance or compatibility in some games that freezes or not launch</string>
+	<string name="drc_use_c.title">DRC use C</string>
+	<string name="drc_use_c.summary">Force DRC to use the C code backend so ARM64 devices works</string>
+	<string name="vector.title">Vector</string>
+	<string name="vector.summary">Select it to open vector games options</string>
+	<string name="beam_2x.title">Beam 2x</string>
+	<string name="beam_2x.summary">Sets the width of the vectors to 2x</string>
+	<string name="flicker.title">Flicker</string>
+	<string name="flicker.summary">Simulates a vector flicker effect</string>
+	<string name="default_mame_data.title">Default MAME data</string>
+	<string name="default_mame_data.summary">Restore MAME data to default values (mame.ini, mame_avail.ini, cfg and nvram files)</string>
+	<string name="input.title">Input</string>
+	<string name="input.summary">Select it to open input options</string>
+	<string name="touch_controller.title">Touch controller</string>
+	<string name="touch_controller.summary">Select it to open touch controller options</string>
+	<string name="mode.title">Mode</string>
+	<string name="customize_layout.title">Customize layout</string>
+	<string name="customize_layout.summary">Select to customize fullscreen touch control layout</string>
+	<string name="default_layout.title">Default layout</string>
+	<string name="default_layout.summary">Restore fullscreen touch control layout to default values</string>
+	<string name="controller_transparency__fullscreen_.title">Controller transparency (fullscreen)</string>
+	<string name="buttons_size__fullscreen_.title">Buttons size (fullscreen)</string>
+	<string name="stick_and_dpad_size__fullscreen_.title">Stick and DPAD size (fullscreen)</string>
+	<string name="number_of_buttons__fullscreen_.title">Number of buttons (fullscreen)</string>
+	<string name="hide_stick.title">Hide stick</string>
+	<string name="hide_stick.summary">Enable to hide stick or dpad when fullscreen</string>
+	<string name="always_show_g_h_buttons.title">Always show G,H buttons</string>
+	<string name="always_show_g_h_buttons.summary">Enable it to always show G,H buttons when full screen so you can bind them MAME actions</string>
+	<string name="animated.title">Animated</string>
+	<string name="animated.summary">Animated touch control. Disable for performance boost</string>
+	<string name="vibrate.title">Vibrate</string>
+	<string name="vibrate.summary">Enable to vibrate when touch</string>
+	<string name="digital_dead_zone.title">Digital dead zone</string>
+	<string name="digital_dead_zone.summary">Enable Touch Dead Zone</string>
+	<string name="analog_dead_zone.title">Analog dead zone</string>
+	<string name="game_controller.title">Game controller</string>
+	<string name="game_controller.summary">Select it to open external controller options</string>
+	<string name="controller_autodetect.title">Controller autodetect</string>
+	<string name="controller_autodetect.summary">Try to detect game controllers (like Xbox one controller) to automatic controller mapping</string>
+	<string name="define_keys.title">Define keys</string>
+	<string name="define_keys.summary">Select to map emulator stick and buttons to physical keys or buttons</string>
+	<string name="default_keys.title">Default keys</string>
+	<string name="default_keys.summary">Restore keys to default values</string>
+	<string name="return_always_same_controller_id.title">Return always same controller ID</string>
+	<string name="return_always_same_controller_id.summary">If you enable this option, multi controller support will be disabled and will always returned the same device ID when you define your controller. This is useful to persist configuration on controllers or keyboards which lose their mappings when you disconnect and connect again</string>
+	<string name="disable_right_stick.title">Disable right stick</string>
+	<string name="disable_right_stick.summary">Disable right stick when controller is autodetected</string>
+	<string name="hide_all_buttons_in_frontend.title">Hide all buttons in frontend</string>
+	<string name="hide_all_buttons_in_frontend.summary">Disable all buttons in frontend when a controller is detected and is full screen</string>
+	<string name="hide_all_buttons_in_game.title">Hide all buttons in game</string>
+	<string name="hide_all_buttons_in_game.summary">Disable all buttons in game when a controller is detected and is full screen</string>
+	<string name="analog_dead_zone_1.title">Analog dead zone</string>
+	<string name="mouse.title">Mouse</string>
+	<string name="mouse.summary">Select it to open mouse options.\n(On touch mouse, second finger will be main fire. Third finger when second finger is pressed will be alternate fire)</string>
+	<string name="physical_mouse.title">Physical Mouse</string>
+	<string name="physical_mouse.summary">Enable physical (hardware) mouse support</string>
+	<string name="touch_mouse.title">Touch mouse</string>
+	<string name="touch_mouse.summary">Enable touch mouse support</string>
+	<string name="gaming_touch_mouse.title">Gaming touch mouse</string>
+	<string name="gaming_touch_mouse.summary">Enable to use touch mouse for games (autodetected).</string>
+	<string name="always_gaming_touch_mouse.title">Always gaming touch mouse</string>
+	<string name="always_gaming_touch_mouse.summary">Forces the use of the touch mouse in all games (useful when fails autodetect).</string>
+	<string name="hide_touch_controller.title">Hide touch controller</string>
+	<string name="hide_touch_controller.summary">Enable to auto hide touch controller when game mouse is enabled</string>
+	<string name="keyboard.title">Keyboard</string>
+	<string name="keyboard.summary">Select it to open keyboard options</string>
+	<string name="physical_keyboard.title">Physical keyboard</string>
+	<string name="physical_keyboard.summary">Enable physical (hardware) keyboard support</string>
+	<string name="hide_touch_controller_1.title">Hide touch controller</string>
+	<string name="hide_touch_controller_1.summary">Enable to auto hide touch controller when physical keyboard is detected</string>
+	<string name="virtual_keyboard.title">Virtual keyboard</string>
+	<string name="virtual_keyboard.summary">Enable virtual keyboard support</string>
+	<string name="touch_lightgun.title">Touch lightgun</string>
+	<string name="touch_lightgun.summary">Select it to open touch lightgun options.\n(First finger will be main fire. Second finger when first finger is pressed will be alternate fire)</string>
+	<string name="touch_lightgun_1.title">Touch lightgun</string>
+	<string name="touch_lightgun_1.summary">Enable to use touch lightgun for games (autodetected).</string>
+	<string name="always_touch_lightgun.title">Always touch lightgun</string>
+	<string name="always_touch_lightgun.summary">Forces the use of the touch lighgun in all games (useful when fails autodetect).</string>
+	<string name="long_press_as_button_two.title">Long press as button two</string>
+	<string name="long_press_as_button_two.summary">Enable to use first finger long press as button two. Useful for t.crisis</string>
+	<string name="bottom_as_reload.title">Bottom as reload</string>
+	<string name="bottom_as_reload.summary">Touch at the bottom of the screen to get off-screen reload</string>
+	<string name="tilt_controller.title">Tilt controller</string>
+	<string name="tilt_controller.summary">Select it to open tilt controller options</string>
+	<string name="tilt_sensor.title">Tilt sensor</string>
+	<string name="tilt_sensor.summary">Enable to use tilt sensor for games.</string>
+	<string name="dead_zone.title">Dead zone</string>
+	<string name="sensitivity.title">Sensitivity</string>
+	<string name="sensitivity.summary">Set tilt sensor sensitivity</string>
+	<string name="neutral_vertical_position.title">Neutral vertical position</string>
+	<string name="tilt_as_analog.title">Tilt as analog</string>
+	<string name="tilt_as_analog.summary">Enable to use tilt sensor as analog device, disable to use as digital</string>
+	<string name="touch_anywhere.title">Touch anywhere</string>
+	<string name="touch_anywhere.summary">Enable to tap anywhere on screen to fire. First finger is main fire. Second finger when first finger is pressed is alternate fire</string>
+	<string name="invert_x_axe.title">Invert X axe</string>
+	<string name="invert_x_axe.summary">Enable to invert X axe.</string>
+	<string name="swap_z_y_axes.title">Swap Z,Y axes</string>
+	<string name="swap_z_y_axes.summary">Enable to swap Z,Y axes. This fixes vertical tilt on some devices</string>
+	<string name="stick_type.title">Stick type</string>
+	<string name="mame_touch_ui.title">MAME touch UI</string>
+	<string name="mame_touch_ui.summary">Enable support for navigating MAME menus / arworks using the touch screen</string>
+	<string name="override_sat_and_dz.title">Override SAT and DZ</string>
+	<string name="override_sat_and_dz.summary">Override MAME deadzone and saturation so touch stick and lightgun are accurate</string>
+	<string name="p4_p3_p2_as_p1.title">P4,P3,P2 as P1</string>
+	<string name="p4_p3_p2_as_p1.summary">Allow a single input device to control multiple players at once. Could cause problems in some ROMs</string>
+	<string name="shaders.title">Shaders</string>
+	<string name="shaders.summary">Select it to configure advanced postprocessing effects</string>
+	<string name="enable_opengles_3_2.title">Enable OpenGLES 3.2</string>
+	<string name="enable_opengles_3_2.summary">Enable alt renderer to use shaders. Note: This will set the resolution to \'auto\' in emulation options for the scaling shaders to work correctly and it will be used a small font also</string>
+	<string name="effect_shader.title">Effect shader</string>
+	<string name="use_shader_in_frontend.title">Use shader in frontend</string>
+	<string name="use_shader_in_frontend.summary">Use the shaders effects also in the ROMs manager</string>
+	<string name="force_shaders_as_3_0.title">Force shaders as 3.0</string>
+	<string name="force_shaders_as_3_0.summary">Force shaders to use 3.0 shader language for better accuracy, but some shaders may fail on older devices</string>
+	<string name="scraping.title">Scraping</string>
+	<string name="scraping.summary">Select it to configure media scraping service</string>
+	<string name="enable_media_scraping.title">Enable media scraping</string>
+	<string name="enable_media_scraping.summary">Enable it to do media scraping thanks to Arcade Database by motoschifo. This will download icons or snapshots belonging to your own ROMSET so that they will be displayed on the frontend. You must configure the display of images in MAME UI (in the \'show side panels\' option) if is necessary. Note: Media scraping will only scrape systems on external storage</string>
+	<string name="scrape_icons.title">Scrape icons</string>
+	<string name="scrape_icons.summary">Enable it to scrape icons that will be showed on the system list</string>
+	<string name="scrape_snapshots.title">Scrape snapshots</string>
+	<string name="scrape_snapshots.summary">Enable it to scrape snapshots that will be showed on the images panel</string>
+	<string name="scrape_additional_media.title">Scrape additional media</string>
+	<string name="scrape_additional_media.summary">Enable to scrape the rest of available media like cabinets images. This will use up a lot of storage space and the download will take longer</string>
+	<string name="resize_images_to_save_space.title">Resize images to save space</string>
+	<string name="resize_images_to_save_space.summary">Enable it to resize images so that less storage space is used</string>
+	<string name="general.title">General</string>
+	<string name="general.summary">Select it to open general options</string>
+	<string name="change_roms_path.title">Change ROMs path</string>
+	<string name="change_roms_path.summary">Change roms location. You have to move ROMs files manually</string>
+	<string name="save_states_in_roms_path.title">Save States in ROMs path</string>
+	<string name="save_states_in_roms_path.summary">Game states will be stored under ROM files folder. This prevents Android 11+ from deleting them when using external storage for ROMs files and uninstalling the app</string>
+	<string name="screen_orientation.title">Screen orientation</string>
+	<string name="overlay_effect.title">Overlay effect</string>
+	<string name="warn_on_exit.title">Warn on exit</string>
+	<string name="warn_on_exit.summary">Enable it to warn when you press the exit button when gaming</string>
+	<string name="navigation_bar_mode.title">Navigation bar mode</string>
+	<string name="use_notch.title">Use Notch</string>
+	<string name="use_notch.summary">Expand display area to use notch area on devices supported</string>
+	<string name="use_simple_ui.title">Use simple UI</string>
+	<string name="use_simple_ui.summary">Use the MAME simple UI instead of the cabinet one. Simple UI will show you 20 random games but you can search for any by typing with the keyboard</string>
+	<string name="scale_beyond_boundaries.title">Scale beyond boundaries</string>
+	<string name="scale_beyond_boundaries.summary">Enable it to scale beyond screen boundaries when a fixed scale is selected</string>
+	<string name="tv_overscan.title">TV overscan</string>
+	<string name="tv_overscan.summary">Enable it to apply a 10 pct safe area to correct overscan issues on some TV sets</string>
+	<string name="advanced.title">Advanced</string>
+	<string name="advanced.summary">Select it to open advanced options</string>
+	<string name="video_engine.title">Video engine</string>
+	<string name="sound_engine.title">Sound engine</string>
+	<string name="double_buffer.title">Double buffer</string>
+	<string name="double_buffer.summary">Avoids flickering at the expense of input latency</string>
+	<string name="main_thread_priority.title">Main thread priority</string>
+	<string name="installation_path.title">Installation path</string>
+	<string name="installation_path_dialog.title">Change installation path:</string>
+	<string name="use_mame_ini_for_paths.title">Use mame.ini for paths</string>
+	<string name="use_mame_ini_for_paths.summary">Use mame.ini instead of the values established by the emulator automatically to define the paths of the ROMs and other resources in external storage. Enabling this option can prevent you from seeing your ROMs if you don\'t know what you are doing</string>
+	<string name="debug_mode.title">Debug mode</string>
+	<string name="debug_mode.summary">Only for developers</string>
+	<string name="portrait_display_settings.title">Portrait Display Settings</string>
+	<string name="scaling_mode.title">Scaling mode</string>
+	<string name="overlay_effect_1.title">Overlay effect</string>
+	<string name="touch_controller_visible.title">Touch controller visible</string>
+	<string name="touch_controller_visible.summary">Disable to hide the touch controller. Useful when you are using a GamePad</string>
+	<string name="smooth_scaling.title">Smooth scaling</string>
+	<string name="smooth_scaling.summary">Select to turn bitmap filtering on</string>
+	<string name="fullscreen.title">Fullscreen</string>
+	<string name="fullscreen.summary">Select to enable fullscreen portrait mode</string>
+	<string name="landscape_display_settings.title">Landscape Display Settings</string>
+	<string name="scaling_mode_1.title">Scaling mode</string>
+	<string name="overlay_effect_2.title">Overlay effect</string>
+	<string name="touch_controller_visible_1.title">Touch controller visible</string>
+	<string name="touch_controller_visible_1.summary">Disable to hide the touch controller. Useful when you are using a GamePad</string>
+	<string name="smooth_scaling_1.title">Smooth scaling</string>
+	<string name="smooth_scaling_1.summary">Select to turn bitmap filtering on</string>
+
+<!--
+	Java String DialogHelper
+-->	
+	<string name="confirm_dialog_save">Do you want to save changes?</string>
+	<string name="confirm_dialog_yes">Yes</string>
+	<string name="confirm_dialog_no">No</string>
+	<string name="dialog_roms_message_1">Where do you have stored or want to store your ROM files?\n\n</string>
+	<string name="dialog_roms_message_2">By default, an empty internal folder will be used (but you should manually copy your ROMs files there using a PC).\u0020</string>
+	<string name="dialog_roms_message_3">You can also select a folder with ROMs files from your external storage which will need to be authorized in the next step so MAME4droid can read the ROMS from it.\n\n</string>
+	<string name="dialog_roms_message_4">Also, if you select an external storage folder, your ROMs files will not be deleted when the app is uninstalled and you can use an Android file manager to move your ROMs there without needing a PC.</string>
+	<string name="dialog_roms_internal">Internal</string>
+	<string name="dialog_roms_external">External Storage</string>
+	<string name="dialog_roms_file_manager">Your device doesn\'t have the native android file manager needed to authorize external storage reading.</string>
+	<string name="dialog_roms_folder_permissions">\n\nSome Android TV devices don\'t include the OS document picker which is needed to grant folder permissions for the apps on Android 11+. As an alternative, select default which use the App Media Folder which is supported on all devices and is created at Android/media/[app package name]. Move any emulator files into that folder with a file manager so the app can access them without any special permissions.</string>
+	<string name="confirm_dialog_exit">Are you sure you want to exit from app?</string>
+	<string name="dialog_error_message">Error</string>
+	<string name="dialog_info_message">Info</string>
+	<string name="confirm_dialog_ok">OK</string>
+	<string name="dialog_options_load_state">Load State</string>
+	<string name="dialog_options_save_state">Save State</string>
+	<string name="dialog_options_help">Help</string>
+	<string name="dialog_options_settings">Settings</string>
+	<string name="dialog_options_keyboard">Keyboard</string>
+	<string name="dialog_options_exit">Exit</string>
+	<string name="dialog_options_title">Choose an option from the menu.</string>
+	<string name="dialog_emu_restart_title">Restart needed!</string>
+	<string name="dialog_emu_restart_message">MAME4droid needs to restart for the changes to take effect.</string>
+	<string name="dialog_dismiss">Dismiss</string>
+	<string name="dialog_no_permissions_title">No permissions!</string>
+	<string name="dialog_no_permissions_message">You don\'t have permission to read from external storage. Please, allow storage permission on Android applications settings.</string>	
+
+<!--
+	Java String MainHelper
+-->	
+	<string name="installationdir_seterror_1">Can\'t find/create: \'</string>
+	<string name="installationdir_seterror_2">\' Is it writable?.\nReverting...</string>
+	<string name="removefiles_message">Deleted MAME cfg and NVRAM files...</string>
+	<string name="copyfiles_message_1">Installing files,\u0020</string>
+	<string name="copyfiles_message_2">please wait...</string>
+	<string name="installing_message">Installing:\u0020</string>
+	<string name="installationdir_message_1">Created or updated: \'</string>
+	<string name="installationdir_message_2">\' to store save states, cfg files and MAME assets.\n\nNote, copy or move your zipped ROMs under \'</string>
+	<string name="installationdir_message_3">\' directory!\n\nIMPORTANT: MAME4droid 2024 uses only\u0020</string>
+	<string name="installationdir_message_4">\u0020MAME romset, not 0.139.</string>
+	<string name="installationdir_message_5">Welcome to MAME4droid for META Quest!\n\nYou should pair an XBOX One controller on your META Quest to be able to play games but you can play lightgun games with your touch controllers.\n\n</string>
+	<string name="controlcustomizer_infomsg_1">Control layout customization is only allowed in fullscreen mode</string>
+	<string name="controlcustomizer_infomsg_2">Control layout customization is only allowed when touch controller is visible</string>
+	<string name="showhelp_1">When MAME4droid is first run, it will create a folder structure for you on the internal memory of your Android device. This folder contains all the other folders MAME uses as well as some basic configuration files.</string>
+	<string name="showhelp_2">Since MAME4droid does not come with game ROM files, you will need to copy them to (You can change it in options to external storage if your device allows it) \'/storage/emulated/0/Android/media/com.seleuco.mame4d2024/roms\' folder (</string>
+	<string name="showhelp_3">the one that applies) yourself. These should be properly named, ZIPped MAME v0.266 ROMs files with the filenames in all lower case.\n\nImportant: You should define or map your Android TV game controller on \'options/settings/input/External controller/define Keys\' to avoid this help screen constantly showing if the controller is not auto detected.\n\n</string>
+	<string name="showhelp_4">Controls: Buttons A,B,C,D,E,F on the controller map to buttons Button MAME 1 to 6 buttons.</string>
+	<string name="showhelp_5">\u0020Coin button inserts coin/adds credit.START button starts 1P game. A+START is fast forward. B+START is toggle UI controls. START+A+B is service mode. SELECT+A+B is soft reset. Use SELECT(coin) or START for UI navigation.</string>
+	<string name="showhelp_6">R1 + START loads a save state. L1 + START saves a save state. START + SELECT when gaming accesses the game\'s MAME menu (dip switches, etc)...</string>
+
+<!--
+	Java String SAFHelper
+-->	
+
+	<string name="listurifiles_warn_1">Caching SAF files.</string>
+	<string name="listurifiles_warn_2">\u0020Reading, please wait...</string>
+	<string name="no_permission_read_rom_1">MAME4droid doesn\'t have permission to read the roms files on\u0020</string>
+	<string name="no_permission_read_rom_2">.\n\nGive permissions again or select another ROMs folder, both in MAME4droid menu \'Options -> Settings -> General -> Change ROMs path\'.</string>
+	
+<!--
+	Java String ScraperHelper
+-->		
+	<string name="scraper_warning_nospace">Media scraping stopped (there is not enough free space)</string>
+	<string name="scraper_warning_error">Media scraping error:\u0020</string>
+	<string name="scraper_warning_running">Media scraping is running...</string>
+	<string name="scraper_warning_ends">Media scraping ends (you should restart MAME4droid...)</string>
+
+<!--
+	Java String GameController
+-->	
+	<string name="detected_generic_controller">Detected generic controller. You should map it on settings!\u0020</string>
+	<string name="detected_input_device">Detected input device:\u0020</string>
+	<string name="detected_input_device_as_p_msg1">Detected\u0020</string>
+	<string name="detected_input_device_as_p_msg2">\u0020controller as P</string>
+
+<!--
+	Java String Keyboard
+-->	
+	<string name="keyboard_is_enabled">Keyboard is enabled!</string>
+	
+<!--
+	Java String Mouse
+-->	
+	<string name="mouse_is_enabled">Mouse is enabled!</string>
+	
+<!--
+	Java String CheckBoxPrefWithWarn
+-->	
+	<string name="checkboxprefwithwarn_confirm">Are you sure? (app restart needed)</string>
+	
+<!--
+	Java String DefineKeys
+-->		
+	<string name="definekeys_p1">Player 1</string>
+	<string name="definekeys_p2">Player 2</string>
+	<string name="definekeys_p3">Player 3</string>
+	<string name="definekeys_p4">Player 4</string>
+	<string name="gamepad_auto_detected_title">GamePad Autodetect is enabled!</string>
+	<string name="gamepad_auto_detected_msg1">Player\u0020</string>
+	<string name="gamepad_auto_detected_msg2">\u0020gamepad is autodetected! You need to disable autodetection to change keys for this player.</string>
+
+<!--
+	Java String KeySelect
+-->	
+	<string name="keyselect_pressbutton">Press button for \"</string>
+	<string name="key_cancel">Cancel</string>
+	<string name="key_clear">Clear</string>
+
+<!--
+	Java String SensitivityPrefScreen
+-->	
+	<string name="prefscreen_save">Save</string>
+	<string name="prefscreen_cancel">Cancel</string>
+
+<!--
+	Java String UserPreferences
+-->	
+	<string name="current_value_string">Current value is \'</string>
+	<string name="current_values_string">Current values is \'</string>
+	<string name="confirm_restore">Are you sure to restore?</string>
+	<string name="confirm_restore_warning">This will remove all your MAME cfg and nvram files. This is useful to restore games to defaults to fixup mame key mappings.</string>
+
+<!--
+	Java String Render
+-->	
+	<string name="not_enough_memory_for_texture">Not enough memory to create texture!</string>
+	<string name="err_create_shaders">Error creating stock shaders!</string>
+	<string name="err_create_stock_shaders_program">Error creating stock shader program!</string>
+	<string name="err_create_shaders_reverting">Error creating effect shader... reverting to stock shader!</string>
+	<string name="err_create_effect_shaders_program">Error creating effect shader program!</string>
+	<string name="reverting_stock_shader">Not found shader configuration... reverting to stock shader!</string>
+	<string name="err_reading_shader_cfg">Error reading shader.cfg file!</string>
+
+<!--
+	Java String Emulator
+-->	
+	<string name="tilt_sensor_enabled">Tilt sensor is enabled!</string>
+	<string name="touch_lightgun_always_enabled">Touch lightgun is always enabled!</string>
+	<string name="touch_lightgun_auto_enabled">Touch lightgun is auto enabled!</string>
+	<string name="touch_mouse_always_enabled">Touch mouse is always enabled!</string>
+	<string name="touch_mouse_auto_enabled">Touch mouse is auto enabled!</string>
+
+<!--
+	Java String ListKeys
+-->	
+    <string name="input_label_up">Up</string>
+    <string name="input_label_down">Down</string>
+    <string name="input_label_left">Left</string>
+    <string name="input_label_right">Right</string>
+    <string name="input_label_button_a">Button A</string>
+    <string name="input_label_button_b">Button B</string>
+    <string name="input_label_button_c">Button C</string>
+    <string name="input_label_button_d">Button D</string>
+    <string name="input_label_button_e">Button E</string>
+    <string name="input_label_button_f">Button F</string>
+    <string name="input_label_button_g">Button G</string>
+    <string name="input_label_button_h">Button H</string>
+    <string name="input_label_coin">Coin</string>
+    <string name="input_label_start">Start</string>
+    <string name="input_label_exit">Exit</string>
+    <string name="input_label_option">Option</string>
+	<string name="input_label_title_1">MAME4droid Player\u0020</string>
+	<string name="input_label_title_2">\u0020keys</string>
+
+<!--
+	LanguageSwith
+-->	
+
+	<string name="language_setting.title">Language Setting</string>
+    <string name="custom_language">Custom Language</string>
+    <string name="custom_language_summary">Enable it to selecct language(disable it to follow the system language).</string>
+    <string name="select_language">Select Language</string>
+    <string name="select_language_summary">Choose your preferred language</string>
+
+		<string-array name="language_entries">
+			<item>English</item>
+			<item>Simplified Chinese</item>
+			<item>Traditional Chinese</item>
+		</string-array>
+		<string-array name="language_values">
+			<item>en</item>
+			<item>zh-CN</item>
+			<item>zh-TW</item>
+		</string-array>
 </resources>
 

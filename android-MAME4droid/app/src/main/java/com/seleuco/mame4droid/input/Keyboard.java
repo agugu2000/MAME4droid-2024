@@ -51,12 +51,20 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+import android.content.Context;
 
 import com.seleuco.mame4droid.Emulator;
 import com.seleuco.mame4droid.MAME4droid;
 import com.seleuco.mame4droid.widgets.WarnWidget;
+import com.seleuco.mame4droid.R;
 
 public class Keyboard implements IController {
+
+	private Context context;
+	
+	public Keyboard(Context context) {
+	this.context = context; 
+	}
 
 	protected long last_soft_key_time = -1;
 	protected long last_soft_key_code = -1;
@@ -120,7 +128,7 @@ public class Keyboard implements IController {
 			if(!event.getDevice().isVirtual() && !isKeyboardEnabled)
 			{
 				isKeyboardEnabled = true;
-				CharSequence text = "Keyboard is enabled!";
+				CharSequence text = context.getString(R.string.keyboard_is_enabled);
 				new WarnWidget.WarnWidgetHelper(mm, text.toString(), 3, Color.GREEN, true);
 
 				mm.getMainHelper().updateMAME4droid();

@@ -47,10 +47,12 @@ package com.seleuco.mame4droid.render;
 import android.graphics.Color;
 import android.opengl.GLSurfaceView.Renderer;
 import android.util.Log;
+import android.content.Context;
 
 import com.seleuco.mame4droid.Emulator;
 import com.seleuco.mame4droid.MAME4droid;
 import com.seleuco.mame4droid.widgets.WarnWidget;
+import com.seleuco.mame4droid.R;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -61,7 +63,15 @@ import javax.microedition.khronos.opengles.GL10;
 import javax.microedition.khronos.opengles.GL11;
 import javax.microedition.khronos.opengles.GL11Ext;
 
+
 public class GLRendererES10 implements Renderer, IGLRenderer {
+
+	private Context context;
+	
+	public GLRendererES10(Context context) {
+	this.context = context;
+	mCrop = new int[4]; 
+	}
 
 	protected int emuTextureId = -1;
 
@@ -256,7 +266,7 @@ public class GLRendererES10 implements Renderer, IGLRenderer {
 			createEmuTexture(gl);
 		} catch (OutOfMemoryError e) {
 			if (!warn)
-				new WarnWidget.WarnWidgetHelper(mm, "Not enough memory to create texture!", 5, Color.RED, true);
+				new WarnWidget.WarnWidgetHelper(mm, context.getString(R.string.not_enough_memory_for_texture), 5, Color.RED, true);
 			warn = true;
 			return;
 		}

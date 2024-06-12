@@ -450,18 +450,18 @@ public class Emulator {
 
 					CharSequence text = "";
 					if (mm.getPrefsHelper().isTiltSensorEnabled())
-						text = "Tilt sensor is enabled!";
+						text = mm.getString(R.string.tilt_sensor_enabled);
 					else if (mm.getPrefsHelper().isTouchLightgun()) {
 						if(mm.getPrefsHelper().isTouchLightgunForced())
-							text = "Touch lightgun is always enabled!";
+							text = mm.getString(R.string.touch_lightgun_always_enabled);
 							else
-							text = "Touch lightgun is auto enabled!";
+							text = mm.getString(R.string.touch_lightgun_auto_enabled);
 					}
 					else if (mm.getPrefsHelper().isTouchGameMouse()) {
 						if(mm.getPrefsHelper().isTouchGameMouseForced())
-							text = "Touch mouse is always enabled!";
+							text = mm.getString(R.string.touch_mouse_always_enabled);
 							else
-						    text = "Touch mouse is auto enabled!";
+						    text = mm.getString(R.string.touch_mouse_auto_enabled);
 					}
 
 					new WarnWidget.WarnWidgetHelper(mm, text.toString(), 3, Color.YELLOW, true);

@@ -43,6 +43,7 @@
  */
 
 package com.seleuco.mame4droid.prefs;
+import com.seleuco.mame4droid.R;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -59,21 +60,41 @@ import android.widget.TextView;
 
 import com.seleuco.mame4droid.R;
 import com.seleuco.mame4droid.input.GameController;
+import com.seleuco.mame4droid.prefs.LanguageSwitchActivity; 
 
 public class DefineKeys extends ListActivity {
 
-    protected int playerIndex = 0;
+    private Context context;
+    private String[] playerLabels;
 
-    public static final String[] playerLabels = {
-            "Player 1",
-            "Player 2",
-            "Player 3",
-            "Player 4",
-    };
+    public DefineKeys() {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LanguageSwitchActivity.updateLanguage(this);
+        setTitle(R.string.define_keys_label);
+    }
+
+	public DefineKeys(Context context) {
+	this.context = context; 
+	}
+
+    protected int playerIndex = 0;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        LanguageSwitchActivity.updateLanguage(this); 
+
+        playerLabels = new String[]{
+            getString(R.string.definekeys_p1),
+            getString(R.string.definekeys_p2),
+            getString(R.string.definekeys_p3),
+            getString(R.string.definekeys_p4),
+        };
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
                 WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
@@ -85,7 +106,7 @@ public class DefineKeys extends ListActivity {
         final Context context = this;
 
         ArrayAdapter<String> keyLabelsAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, DefineKeys.playerLabels) {
+                android.R.layout.simple_list_item_1, playerLabels) {
             @Override
             public View getView(final int position, final View convertView,
                                 final ViewGroup parent) {
@@ -113,12 +134,12 @@ public class DefineKeys extends ListActivity {
         if (auto_detected) {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
 
-            alertDialog.setTitle("GamePad Autodetect is enabled!");
-            alertDialog.setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
+            alertDialog.setTitle(R.string.gamepad_auto_detected_title);
+            alertDialog.setPositiveButton(R.string.dialog_dismiss, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                 }
             });
-            alertDialog.setMessage("Player " + (position + 1) + " gamepad is autodetected! You need to disable autodetection to change keys for this player.");
+            alertDialog.setMessage(context.getString(R.string.gamepad_auto_detected_msg1) + (position + 1) + context.getString(R.string.gamepad_auto_detected_msg2));
             alertDialog.show();
         } else {
             startActivityForResult(new Intent(this, ListKeys.class).putExtra(

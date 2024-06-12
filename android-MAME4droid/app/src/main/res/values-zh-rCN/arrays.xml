@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="pref_overlay_intensity_options">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+	</string-array>
+	<string-array name="pref_overlay_intensity_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+	</string-array>
+
+	<string-array name="pref_scaleMode_options">
+		<item>缩放（保持纵宽比）</item>
+		<item>拉伸以适合窗口</item>
+		<item>原始大小</item>
+		<item>缩放（整数缩放适应屏幕）</item>
+		<item>缩放（越界的整数缩放）</item>
+		<item>1.5倍</item>
+		<item>2倍</item>
+	</string-array>
+	<string-array name="pref_scaleMode_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+        <item>14</item>
+        <item>15</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="pref_global_video_render_options">
+		<item>GL</item>
+	</string-array>
+	<string-array name="pref_global_video_render_values">
+		<item>1</item>
+	</string-array>
+
+	<string-array name="pref_controller_type_options">
+		<item>数字方向键</item>
+        <item>数字摇杆</item>
+		<item>模拟摇杆</item>
+	</string-array>
+	<string-array name="pref_controller_type_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<string-array name="pref_dz_options">
+		<item>无</item>
+		<item>低</item>
+		<item>正常</item>
+		<item>高</item>
+		<item>非常高</item>
+	</string-array>
+	<string-array name="pref_dz_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="pref_frameskip_options">
+		<item>自动</item>
+		<item>无</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+	</string-array>
+	<string-array name="pref_frameskip_values">
+		<item>-1</item>
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+	</string-array>
+
+	<string-array name="pref_sound_options">
+		<item>关闭</item>
+		<item>开启(11 KHz)</item>
+		<item>开启(22 Khz)</item>
+		<item>开启(33 Khz)</item>
+		<item>开启(44 Khz)</item>
+		<item>开启(48 Khz)</item>
+	</string-array>
+	<string-array name="pref_sound_values">
+		<item>-1</item>
+		<item>11025</item>
+		<item>22050</item>
+		<item>32000</item>
+		<item>44100</item>
+		<item>48000</item>
+	</string-array>
+
+	<string-array name="pref_stick_options">
+	    <item>自动</item>
+		<item>双向</item>
+		<item>四向</item>
+		<item>八向</item>
+	</string-array>
+	<string-array name="pref_stick_values">
+	    <item>-1</item>
+		<item>2</item>
+		<item>4</item>
+		<item>8</item>
+	</string-array>
+
+	<string-array name="pref_numbuttons_options">
+	    <item>自动（启发式）</item>
+	    <item>0键</item>
+	    <item>1键</item>
+		<item>2键</item>
+		<item>3键(C=A+B)</item>
+		<item>3键</item>
+		<item>4键</item>
+		<item>全键</item>
+	</string-array>
+	<string-array name="pref_numbuttons_values">
+	    <item>-1</item>
+	    <item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>33</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="pref_resolution_options">
+		<item>自动 (原设备)</item>
+		<item>640x480 (4:3)</item>
+		<item>800x600 (4:3)</item>
+		<item>1024x768 (4:3)</item>
+		<item>1280x720 (16:9)</item>
+        <item>1440x1080 (4:3)</item>
+		<item>1920x1080 (16:9)</item>
+		<item>1/2原生分辨率 (4:3)</item>
+		<item>1/2原生分辨率 (宽屏)</item>
+		<item>原生分辨率 (4:3)</item>
+		<item>原生分辨率 (满屏)</item>
+	</string-array>
+	<string-array name="pref_resolution_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+	</string-array>
+
+
+	<string-array name="pref_osd_resolution_options">
+		<item>400x300 (4:3)</item>
+		<item>500x333 (3:2)</item>
+		<item>640x480 (4:3)</item>
+		<item>800x600 (4:3)</item>
+		<item>1024x768 (4:3)</item>
+		<item>1280x720 (16:9)</item>
+		<item>1440x1080 (4:3)</item>
+		<item>1920x1080 (16:9)</item>
+		<item>1/2原生分辨率 (4:3)</item>
+		<item>1/2原生分辨率 (宽屏)</item>
+		<item>原生分辨率 (4:3)</item>
+		<item>原生分辨率 (满屏)</item>
+	</string-array>
+	<string-array name="pref_osd_resolution_values">
+		<item>0</item>
+		<item>11</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+	</string-array>
+
+    <string-array name="pref_buttons_size_options">
+        <item>更小</item>
+	    <item>小</item>
+		<item>普通</item>
+	    <item>大</item>
+	    <item>更大</item>
+	</string-array>
+	<string-array name="pref_buttons_size_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="pref_low_norm_or_hight_options">
+	    <item>低</item>
+		<item>普通</item>
+	    <item>高</item>
+	</string-array>
+	<string-array name="pref_low_norm_or_hight_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<string-array name="pref_sound_engine_options">
+	    <item>AudioTrack</item>
+        <item>OpenSL低延迟</item>
+	</string-array>
+	<string-array name="pref_sound_engine_values">
+		<item>1</item>
+        <item>4</item>
+	</string-array>
+
+
+    <string-array name="pref_tilt_neutralz_options">
+	    <item>90度</item>
+		<item>80度</item>
+		<item>70度</item>
+		<item>60度</item>
+		<item>50度</item>
+        <item>45度</item>
+        <item>40度</item>
+		<item>30度</item>
+		<item>20度</item>
+		<item>10度</item>
+	</string-array>
+
+	<string-array name="pref_tilt_neutralz_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+	</string-array>
+
+
+    <string-array name="pref_navbar_options">
+	    <item>导航栏可见</item>
+		<item>沉浸式模式</item>
+	</string-array>
+
+	<string-array name="pref_input_modes_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+	<string-array name="pref_input_modes_options">
+		<item>禁用</item>
+		<item>自动</item>
+		<item>启用</item>
+	</string-array>
+
+	<string-array name="pref_navbar_values">
+		<item>0</item>
+		<item>2</item>
+	</string-array>
+
+	<string-array name="pref_orientation_options">
+		<item>自动</item>
+		<item>横向-跟随传感器</item>
+		<item>横向</item>
+		<item>横向反转</item>
+		<item>纵向-跟随传感器</item>
+		<item>纵向</item>
+		<item>纵向反转</item>
+	</string-array>
+
+	<string-array name="pref_orientation_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+	</string-array>
+
+
+	<string-array name="pref_overlay_options">
+		<item>无</item>
+
+		<item>crt</item>
+		<item>crt sharp</item>
+
+		<item>basic (1280x1024)</item>
+		<item>basic (1920x1440)</item>
+
+		<item>arcade elaphe (1024X768)</item>
+		<item>arcade elaphe (1920x1080)</item>
+
+		<item>arcade sharp (1360x768)</item>
+		<item>arcade sharp (1920x1080)</item>
+		<item>arcade sharp bright (1920x1080)</item>
+
+		<item>arcade retro (1360x768)</item>
+		<item>arcade retro (1920x1080)</item>
+		<item>arcade retro bright (1920x1080)</item>
+
+		<item>arcade modern (1920x1080)</item>
+		<item>arcade modern not cross (1920x1080)</item>
+
+		<item>arcade american sharp (1920x1080)</item>
+		<item>arcade american sharp soft (1920x1080)</item>
+
+		<item>scanlines hard (640x480)</item>
+		<item>scanlines soft (640x480)</item>
+		<item>scanlines rgb (1360x768)</item>
+		<item>scanlines rgb (1920x1080)</item>
+		<item>scanlines rgb bright (1920x1080)</item>
+
+
+		<item>aperture1x2rb</item>
+		<item>aperture1x3rb</item>
+		<item>aperture2x4bg</item>
+		<item>aperture2x4rb</item>
+		<item>aperture4x6</item>
+		<item>aperture</item>
+		<item>aperture-grille</item>
+
+		<item>shadow-mask</item>
+		<item>slot-mask</item>
+		<item>slot-mask-aligned</item>
+		<item>monochrome-chessboard</item>
+		<item>monochrome-matrix</item>
+		<item>white</item>
+		<item>lut-default</item>
+    </string-array>
+	<string-array name="pref_overlay_values" >
+		<item>无</item>
+
+		<item>overlay_crt.PNG</item>
+		<item>overlay_crt_sharp.PNG</item>
+
+		<item>overlay_basic_1280x1024.png</item>
+		<item>overlay_basic_1920x1440.png</item>
+
+		<item>overlay_arcade_elaphe_1024X768.PNG</item>
+		<item>overlay_arcade_elaphe_1920x1080.png</item>
+
+		<item>overlay_arcade_sharp_1360x768.PNG</item>
+		<item>overlay_arcade_sharp_1920x1080.PNG</item>
+		<item>overlay_arcade_sharp_bright_1920x1080.PNG</item>
+
+		<item>overlay_arcade_retro_1360x768.PNG</item>
+		<item>overlay_arcade_retro_1920x1080.PNG</item>
+		<item>overlay_arcade_retro_bright_1920x1080.PNG</item>
+
+		<item>overlay_arcade_modern_1920x1080.PNG</item>
+		<item>overlay_arcade_modern_not_cross_1920x1080.PNG</item>
+
+		<item>overlay_arcade_american_sharp_1920x1080.PNG</item>
+		<item>overlay_arcade_american_soft_1920x1080.PNG</item>
+
+		<item>overlay_scanlines_hard_640x480.PNG</item>
+		<item>overlay_scanlines_soft_640x480.PNG</item>
+		<item>overlay_scanlines_rgb_1360x768.PNG</item>
+		<item>overlay_scanlines_rgb_1920x1080.PNG</item>
+		<item>overlay_scanlines_rgb_bright_1920x1080.PNG</item>
+
+		<item>aperture1x2rb.png</item>
+		<item>aperture1x3rb.png</item>
+		<item>aperture2x4bg.png</item>
+		<item>aperture2x4rb.png</item>
+		<item>aperture4x6.png</item>
+		<item>aperture.png</item>
+		<item>aperture-grille.png</item>
+
+		<item>shadow-mask.png</item>
+		<item>slot-mask.png</item>
+		<item>slot-mask-aligned.png</item>
+		<item>monochrome-chessboard.png</item>
+		<item>monochrome-matrix.png</item>
+		<item>white.png</item>
+		<item>lut-default.png</item>
+	</string-array>
+
+	<string-array name="pref_alpha_options">
+		<item>100</item>
+		<item>90</item>
+		<item>80</item>
+		<item>70</item>
+		<item>60</item>
+		<item>50</item>
+		<item>40</item>
+		<item>30</item>
+		<item>20</item>
+		<item>10</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="pref_alpha_values">
+		<item>100</item>
+		<item>90</item>
+		<item>80</item>
+		<item>70</item>
+		<item>60</item>
+		<item>50</item>
+		<item>40</item>
+		<item>30</item>
+		<item>20</item>
+		<item>10</item>
+		<item>0</item>
+	</string-array>
+
+
+</resources>

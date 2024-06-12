@@ -43,10 +43,12 @@
  */
 
 package com.seleuco.mame4droid.prefs;
+import com.seleuco.mame4droid.R;
 
 
 import com.seleuco.mame4droid.input.GameController;
 import com.seleuco.mame4droid.input.InputHandler;
+import com.seleuco.mame4droid.prefs.LanguageSwitchActivity; 
 
 import android.app.Activity;
 import android.content.Intent;
@@ -58,21 +60,29 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 
+
 public class KeySelect extends Activity {
 
     protected int emulatorInputIndex;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        LanguageSwitchActivity.updateLanguage(this);
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        LanguageSwitchActivity.updateLanguage(this); 
 
         emulatorInputIndex = getIntent().getIntExtra("emulatorInputIndex", 0);
-        setTitle("Press button for \"" + ListKeys.emulatorInputLabels[emulatorInputIndex] + "\"");
+        setTitle(getString(R.string.keyselect_pressbutton) + ListKeys.emulatorInputLabels[emulatorInputIndex] + "\"");
 
 
         final Button chancelButton = new Button(this) {
             {
-                setText("Cancel");
+                setText(R.string.key_cancel);
                 setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         setResult(RESULT_CANCELED, new Intent());
@@ -84,7 +94,7 @@ public class KeySelect extends Activity {
 
         final Button clearButton = new Button(this) {
             {
-                setText("Clear");
+                setText(R.string.key_clear);
                 setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         setResult(RESULT_OK, new Intent().putExtra("androidKeyCode", -1));

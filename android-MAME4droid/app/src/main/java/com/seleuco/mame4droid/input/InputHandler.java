@@ -68,11 +68,11 @@ public class InputHandler implements OnTouchListener, OnKeyListener {
 	protected TouchMouse touchMouse = new TouchMouse();
 	protected TouchPointer touchPointer = new TouchPointer();
 	protected TouchLightgun touchLightgun = new TouchLightgun();
-	protected GameController gameController = new GameController();
 
-	protected Mouse mouse = new Mouse();
+    protected GameController gameController;
+    protected Mouse mouse;
+    protected Keyboard keyboard;
 
-	protected Keyboard keyboard = new Keyboard();
 	protected TiltSensor tiltSensor = new TiltSensor();
     protected ControlCustomizer controlCustomizer = new ControlCustomizer();
 
@@ -95,10 +95,13 @@ public class InputHandler implements OnTouchListener, OnKeyListener {
 
     protected MAME4droid mm = null;
 
-    public InputHandler(MAME4droid value) {
+    public InputHandler(MAME4droid mm) {
 
-        mm = value;
+        this.mm = mm;
 		if (mm == null) return;
+        gameController = new GameController(mm);
+        mouse = new Mouse(mm);
+        keyboard = new Keyboard(mm);
 
 		touchController.setMAME4droid(mm);
 		touchStick.setMAME4droid(mm);

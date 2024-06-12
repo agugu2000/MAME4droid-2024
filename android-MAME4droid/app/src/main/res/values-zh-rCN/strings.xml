@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="menu_options">选项</string>
+	<string name="menu_quit_game">退出游戏</string>
+	<string name="menu_quit">关闭软件</string>
+	<string name="app_name">MAME4droid 2024</string>
+	<string name="don_t_bother">请勿再询问</string>
+	<string name="mame_version">0.266</string>
+	
+<!--
+	AndroidManifest
+-->	
+    <string name="settings_label">MAME4droid 设置</string>
+    <string name="help_label">MAME4droid 帮助</string>
+    <string name="define_keys_label">MAME4droid 自定义按键</string>
+    <string name="player_keys_label">MAME4droid 玩家按键</string>
+    <string name="select_key_label">选择按键</string>
+	
+<!--
+	Main UI String
+-->		
+	<string name="configuration.title">设置</string>
+	<string name="emulation.title">模拟器</string>
+	<string name="emulation.summary">选择以打开模拟器选项</string>
+	<string name="emulated_resolution.title">模拟分辨率</string>
+	<string name="frontend_resolution.title">前端分辨率</string>
+	<string name="only_one_processor.title">单核处理</string>
+	<string name="only_one_processor.summary">启用它，以便像dkong这样使用独立声音的游戏不会卡顿。禁用它，可以在能够利用多线程的3D游戏中获得显著的性能提升。</string>
+	<string name="speed_hacks.title">速度优化</string>
+	<string name="speed_hacks.summary">启用它，可以在类似Killer Instinct、Mortal Kombat这样的游戏或CPS3上的游戏中获得更好的性能。您只应该在玩这些游戏时启用它，因为其他游戏可能反会运行不佳或根本无法运行。</string>
+	<string name="sound.title">声音</string>
+	<string name="show_fps.title">显示帧率</string>
+	<string name="show_fps.summary">启用以开启帧率显示</string>
+	<string name="auto_frameskip.title">自动跳帧</string>
+	<string name="auto_frameskip.summary">启用以开启自动跳帧</string>
+	<string name="cheats.title">作弊</string>
+	<string name="cheats.summary">启用读取作弊数据库</string>
+	<string name="hiscore.title">高分插件</string>
+	<string name="hiscore.summary">启用它，激活高分MAME插件，以便使那些原本在易失性存储器中保存高分的游戏可以保存和恢复高分。</string>
+	<string name="input_macro.title">输入宏</string>
+	<string name="input_macro.summary">启用它，允许您通过一个键或按键组合触发一系列模拟输入动作。注意：该插件可以在MAME用户界面插件选项中找到。</string>
+	<string name="autofire.title">连发</string>
+	<string name="autofire.summary">启用它，允许您通过按住一个键或按键组合来模拟重复按下一个按钮。注意：该插件可以在MAME用户界面插件选项中找到。</string>
+	<string name="skip_game_info.title">忽略游戏信息</string>
+	<string name="skip_game_info.summary">强制跳过显示游戏系统信息的画面。</string>
+	<string name="zoom_to_window.title">缩放至窗口</string>
+	<string name="zoom_to_window.summary">自动缩放模拟显示，使得竖屏和横屏游戏都能使用整个设备窗口。如果您在MAME视频选项中通过artwork来使用固定方向和宽分辨率，以此放大屏幕区域，则请禁用此功能。</string>
+	<string name="zoom_game_by_35percent.title">放大游戏35%</string>
+	<string name="zoom_game_by_35percent.summary">自动将模拟显示放大35%。这对于玩一些8位计算机游戏非常有用，比如ZX Spectrum或Amstrad CPC。</string>
+	<string name="disable_drc.title">禁用动态重编译器</string>
+	<string name="disable_drc.summary">如果您使用的是ARM64架构的设备，并且想要获得更好的性能，您可以禁用DRC（动态重编译器）CPU核心，因为在ARM64上没有原生的DRC支持。如果您想测试DRC C后端的性能或者在一些游戏冻结或无法启动时测试兼容性，您可以启用它。</string>
+	<string name="drc_use_c.title">动态重编译器使用C后端</string>
+	<string name="drc_use_c.summary">强制动态重编译器使用C代码后端，以确保ARM64设备能够正常工作</string>
+	<string name="vector.title">矢量</string>
+	<string name="vector.summary">选择它以打开矢量图形游戏的选项。</string>
+	<string name="beam_2x.title">2倍矢量光束宽度</string>
+	<string name="beam_2x.summary">将矢量图形的宽度设置为2倍。</string>
+	<string name="flicker.title">闪烁</string>
+	<string name="flicker.summary">模拟出原始矢量显示器上常见的闪烁效果。</string>
+	<string name="default_mame_data.title">恢复MAME默认数据</string>
+	<string name="default_mame_data.summary">将MAME数据恢复为默认值(还原mame.ini、mame_avail.ini、cfg和nvram等文件)</string>
+	<string name="input.title">输入</string>
+	<string name="input.summary">选择以打开输入选项</string>
+	<string name="touch_controller.title">触摸控制器</string>
+	<string name="touch_controller.summary">选择以打开触摸控制器选项</string>
+	<string name="mode.title">模式</string>
+	<string name="customize_layout.title">自定义布局</string>
+	<string name="customize_layout.summary">选择以自定义全屏触摸控制布局</string>
+	<string name="default_layout.title">默认布局</string>
+	<string name="default_layout.summary">将全屏触摸控制布局恢复为默认值</string>
+	<string name="controller_transparency__fullscreen_.title">控制器透明度（全屏模式）</string>
+	<string name="buttons_size__fullscreen_.title">按键尺寸（全屏模式）</string>
+	<string name="stick_and_dpad_size__fullscreen_.title">摇杆和十字方向键尺寸（全屏模式）</string>
+	<string name="number_of_buttons__fullscreen_.title">按钮数量（全屏模式）</string>
+	<string name="hide_stick.title">隐藏摇杆</string>
+	<string name="hide_stick.summary">启用此选项可以在全屏模式下隐藏摇杆或十字方向键。</string>
+	<string name="always_show_g_h_buttons.title">始终显示G，H键</string>
+	<string name="always_show_g_h_buttons.summary">启用此选项可在全屏模式下始终显示G和H按钮，以便您可以将它们绑定到MAME中。</string>
+	<string name="animated.title">触摸动画</string>
+	<string name="animated.summary">触摸控制时按键呈现动态效果。禁用它以提高性能。</string>
+	<string name="vibrate.title">震动</string>
+	<string name="vibrate.summary">启用触摸时振动</string>
+	<string name="digital_dead_zone.title">数字摇杆死区</string>
+	<string name="digital_dead_zone.summary">启用触摸死区</string>
+	<string name="analog_dead_zone.title">模拟摇杆死区</string>
+	<string name="game_controller.title">游戏控制器</string>
+	<string name="game_controller.summary">选择它以打开外部控制器选项</string>
+	<string name="controller_autodetect.title">自动检测控制器</string>
+	<string name="controller_autodetect.summary">尝试检测游戏控制器（如Xbox One控制器）以实现自动控制器映射</string>
+	<string name="define_keys.title">自定义按键</string>
+	<string name="define_keys.summary">选择将模拟器的摇杆和按钮映射到物理按键或按钮上</string>
+	<string name="default_keys.title">默认按键</string>
+	<string name="default_keys.summary">将按键恢复为默认值</string>
+	<string name="return_always_same_controller_id.title">总返回相同的控制器设备ID</string>
+	<string name="return_always_same_controller_id.summary">如果您启用此选项，将禁用多控制器支持，并且在定义控制器时始终返回相同的设备ID。这对于持久化配置非常有用，比如在控制器或键盘断开连接并重新连接后丢失它们的映射时</string>
+	<string name="disable_right_stick.title">禁用右摇杆</string>
+	<string name="disable_right_stick.summary">在自动检测到控制器时禁用右摇杆</string>
+	<string name="hide_all_buttons_in_frontend.title">前端界面隐藏所有按键</string>
+	<string name="hide_all_buttons_in_frontend.summary">当检测到控制器且处于全屏模式时，隐藏前端界面中的所有屏幕按钮</string>
+	<string name="hide_all_buttons_in_game.title">游戏中隐藏所有按键</string>
+	<string name="hide_all_buttons_in_game.summary">当检测到控制器且处于全屏模式时，隐藏游戏中的所有屏幕按钮</string>
+	<string name="analog_dead_zone_1.title">模拟摇杆死区</string>
+	<string name="mouse.title">鼠标</string>
+	<string name="mouse.summary">选择它以打开鼠标选项（在使用触摸鼠标时，第二个手指将作为主射击键。当第二个手指按下时，第三个手指将作为备用射击键）</string>
+	<string name="physical_mouse.title">物理鼠标</string>
+	<string name="physical_mouse.summary">启用物理（硬件）鼠标支持</string>
+	<string name="touch_mouse.title">触摸鼠标</string>
+	<string name="touch_mouse.summary">启用触摸鼠标支持</string>
+	<string name="gaming_touch_mouse.title">游戏触摸鼠标</string>
+	<string name="gaming_touch_mouse.summary">启用触摸屏幕模拟鼠标功能，用于游戏（自动检测）。</string>
+	<string name="always_gaming_touch_mouse.title">总是启用游戏触摸鼠标</string>
+	<string name="always_gaming_touch_mouse.summary">强制在所有游戏中使用触摸鼠标（当自动检测失败时很有用）。</string>
+	<string name="hide_touch_controller.title">隐藏触摸控制器</string>
+	<string name="hide_touch_controller.summary">启用此选项，当启用游戏鼠标时自动隐藏触摸控制器。</string>
+	<string name="keyboard.title">键盘</string>
+	<string name="keyboard.summary">选择以打开键盘选项。</string>
+	<string name="physical_keyboard.title">物理键盘</string>
+	<string name="physical_keyboard.summary">启用物理（硬件）键盘支持</string>
+	<string name="hide_touch_controller_1.title">隐藏触摸控制器</string>
+	<string name="hide_touch_controller_1.summary">启用此选项，当启用游戏键盘时自动隐藏触摸控制器。</string>
+	<string name="virtual_keyboard.title">虚拟键盘</string>
+	<string name="virtual_keyboard.summary">启用虚拟键盘支持</string>
+	<string name="touch_lightgun.title">触摸光枪</string>
+	<string name="touch_lightgun.summary">选择它以打开触摸式光枪选项。\n（第一个手指将作为主射击键。当第一个手指按下时，第二个手指将作为备用射击键。）</string>
+	<string name="touch_lightgun_1.title">触摸光枪</string>
+	<string name="touch_lightgun_1.summary">选择它以打开触摸式光枪选项。\n（第一个手指将作为主射击键。当第一个手指按下时，第二个手指将作为备用射击键。）</string>
+	<string name="always_touch_lightgun.title">总是启用触摸光枪</string>
+	<string name="always_touch_lightgun.summary">强制在所有游戏中使用触摸式光枪（当自动检测失败时很有用）。</string>
+	<string name="long_press_as_button_two.title">长按作为第二个按钮</string>
+	<string name="long_press_as_button_two.summary">启用第一个手指长按作为第二个按钮。在化解危机t.crisis中很有用</string>
+	<string name="bottom_as_reload.title">底部触摸以重新装弹</string>
+	<string name="bottom_as_reload.summary">在屏幕底部触摸以实现屏幕外重新装弹</string>
+	<string name="tilt_controller.title">陀螺仪控制器</string>
+	<string name="tilt_controller.summary">选择以打开陀螺仪控制器选项</string>
+	<string name="tilt_sensor.title">陀螺仪传感器</string>
+	<string name="tilt_sensor.summary">启用陀螺仪传感器进行游戏.</string>
+	<string name="dead_zone.title">死区</string>
+	<string name="sensitivity.title">灵敏度</string>
+	<string name="sensitivity.summary">设置陀螺仪传感器的灵敏度</string>
+	<string name="neutral_vertical_position.title">垂直置中位置</string>
+	<string name="tilt_as_analog.title">将陀螺仪作为模拟输入</string>
+	<string name="tilt_as_analog.summary">启用则将陀螺仪传感器用作模拟输入设备，禁用则将其用作数字输入设备。</string>
+	<string name="touch_anywhere.title">触摸射击</string>
+	<string name="touch_anywhere.summary">启用在屏幕上任意位置轻触即可射击。第一个手指是主射击。当第一个手指按下时，第二个手指是备用射击。</string>
+	<string name="invert_x_axe.title">反转X轴</string>
+	<string name="invert_x_axe.summary">启用反转X轴</string>
+	<string name="swap_z_y_axes.title">交换Z轴和Y轴</string>
+	<string name="swap_z_y_axes.summary">启用以交换Z轴和Y轴。这可以在某些设备上修正陀螺仪的垂直问题</string>
+	<string name="stick_type.title">摇杆类型</string>
+	<string name="mame_touch_ui.title">MAME触摸界面</string>
+	<string name="mame_touch_ui.summary">启用使用触摸屏浏览MAME菜单/artwork等功能</string>
+	<string name="override_sat_and_dz.title">覆盖死区和饱和度</string>
+	<string name="override_sat_and_dz.summary">覆盖MAME的死区和饱和度设置，使得触摸摇杆和光枪更加精确</string>
+	<string name="p4_p3_p2_as_p1.title">将P2-P4作为P1</string>
+	<string name="p4_p3_p2_as_p1.summary">允许单个输入设备同时控制多个玩家。这在某些ROM中可能会导致问题。</string>
+	<string name="shaders.title">着色器</string>
+	<string name="shaders.summary">选择以配置高级后处理效果。</string>
+	<string name="enable_opengles_3_2.title">启用OpenGLES 3.2</string>
+	<string name="enable_opengles_3_2.summary">启用备用渲染器以使用着色器。注意：这将把模拟选项中的分辨率设置为“自动”，以便着色器能正确工作，并且还会使用较小的字体</string>
+	<string name="effect_shader.title">效果着色器</string>
+	<string name="use_shader_in_frontend.title">前端界面使用着色器</string>
+	<string name="use_shader_in_frontend.summary">前端管理ROM的界面也开启着色器</string>
+	<string name="force_shaders_as_3_0.title">强制着色器为3.0</string>
+	<string name="force_shaders_as_3_0.summary">强制着色器使用3.0版的代码以提高精确度，但一些着色器可能在旧设备上不起作用</string>
+	<string name="scraping.title">刮削器</string>
+	<string name="scraping.summary">选择它以配置刮削器（媒体抓取）</string>
+	<string name="enable_media_scraping.title">启用刮削器</string>
+	<string name="enable_media_scraping.summary">启用它，可以通过motoschifo的Arcade Database进行媒体抓取。这将下载属于您自己的ROM集的图标或快照，以便它们在前端显示。您必须在MAME用户界面（在“显示侧边板”选项中）配置预览图的显示。注意：刮削器只会把数据抓取到外部存储上。</string>
+	<string name="scrape_icons.title">抓取图标</string>
+	<string name="scrape_icons.summary">启用以抓取显示在游戏列表中的图标</string>
+	<string name="scrape_snapshots.title">抓取截图</string>
+	<string name="scrape_snapshots.summary">启用以抓取显示在预览图面板中的截图</string>
+	<string name="scrape_additional_media.title">抓取额外的图像</string>
+	<string name="scrape_additional_media.summary">启用以抓取其他可用的媒体资源，如机台图。这将会占用大量的存储空间，并且下载所需的时间会更长</string>
+	<string name="resize_images_to_save_space.title">调整图像大小</string>
+	<string name="resize_images_to_save_space.summary">启用它以调整图像大小，从而减少使用的存储空间</string>
+	<string name="general.title">通用</string>
+	<string name="general.summary">选择以打开通用选项</string>
+	<string name="change_roms_path.title">更改ROM路径</string>
+	<string name="change_roms_path.summary">更改ROM的位置。您需要手动移动ROM文件到新路径。</string>
+	<string name="save_states_in_roms_path.title">即时存档于ROM的路径</string>
+	<string name="save_states_in_roms_path.summary">即时存档将被存储在ROM文件夹中。这可以防止在使用外部存储并卸载应用程序时，Android 11或更高版本将它们删除</string>
+	<string name="screen_orientation.title">屏幕方向</string>
+	<string name="overlay_effect.title">覆盖层效果</string>
+	<string name="warn_on_exit.title">退出警告</string>
+	<string name="warn_on_exit.summary">启用它，当您在游戏时按下退出按钮会弹出警告</string>
+	<string name="navigation_bar_mode.title">导航栏模式</string>
+	<string name="use_notch.title">使用刘海屏</string>
+	<string name="use_notch.summary">扩展显示区域以在支持的设备上使用刘海屏顶部区域</string>
+	<string name="use_simple_ui.title">使用MAME简易界面</string>
+	<string name="use_simple_ui.summary">使用MAME的简易界面而不是传统风格的界面。简易界面会显示20个随机游戏，但您可以通过键盘输入来搜索游戏</string>
+	<string name="scale_beyond_boundaries.title">缩放越界</string>
+	<string name="scale_beyond_boundaries.summary">启用它，以便在选择了固定缩放比例时，图像可以缩放到超出屏幕边界</string>
+	<string name="tv_overscan.title">TV过扫描</string>
+	<string name="tv_overscan.summary">启用此选项可以在屏幕边缘应用10%的安全区域，以纠正某些电视在过扫描问题上的错误</string>
+	<string name="advanced.title">高级</string>
+	<string name="advanced.summary">选择以打开高级选项</string>
+	<string name="video_engine.title">视频引擎</string>
+	<string name="sound_engine.title">声音引擎</string>
+	<string name="double_buffer.title">双缓冲</string>
+	<string name="double_buffer.summary">以增加了输入延迟为代价来避免闪烁</string>
+	<string name="main_thread_priority.title">主线程优先级</string>
+	<string name="installation_path.title">安装路径</string>
+	<string name="installation_path_dialog.title">\u0020更改安装路径：</string>
+	<string name="use_mame_ini_for_paths.title">使用mame.ini中的路径</string>
+	<string name="use_mame_ini_for_paths.summary">使用 mame.ini 文件而不是由模拟器自动设置的值来定义外部存储中ROM和其他资源的路径。如果您不知道自己在做什么，启用此选项可能会阻止您看到自己的ROM</string>
+	<string name="debug_mode.title">调试模式</string>
+	<string name="debug_mode.summary">仅限开发者使用</string>
+	<string name="portrait_display_settings.title">竖屏显示设置</string>
+	<string name="scaling_mode.title">缩放模式</string>
+	<string name="overlay_effect_1.title">覆盖层效果</string>
+	<string name="touch_controller_visible.title">触摸控制器可见性</string>
+	<string name="touch_controller_visible.summary">禁用以隐藏触摸控制器。当您使用游戏手柄时很有用。</string>
+	<string name="smooth_scaling.title">平滑缩放</string>
+	<string name="smooth_scaling.summary">选择以开启位图过滤</string>
+	<string name="fullscreen.title">全屏</string>
+	<string name="fullscreen.summary">选择以启用全屏竖屏模式</string>
+	<string name="landscape_display_settings.title">横屏显示设置</string>
+	<string name="scaling_mode_1.title">缩放模式</string>
+	<string name="overlay_effect_2.title">覆盖层效果</string>
+	<string name="touch_controller_visible_1.title">触摸控制器可见性</string>
+	<string name="touch_controller_visible_1.summary">禁用以隐藏触摸控制器。当您使用游戏手柄时很有用。</string>
+	<string name="smooth_scaling_1.title">平滑缩放</string>
+	<string name="smooth_scaling_1.summary">选择以开启位图过滤</string>
+	
+<!--
+	Java String DialogHelper
+-->
+	<string name="confirm_dialog_save">您是否需要保存？</string>
+	<string name="confirm_dialog_yes">是</string>
+	<string name="confirm_dialog_no">否</string>
+	<string name="dialog_roms_message_1">您的ROM储存在哪里？或者您想将ROM存储在哪里？\n\n</string>
+	<string name="dialog_roms_message_2">默认情况下，将使用一个空的内部文件夹（但您需要使用电脑手动将您的ROM文件复制到那里）。</string>
+	<string name="dialog_roms_message_3">您也可以从您的外部存储中选择一个包含ROM文件的文件夹，这将在下一步中需要授权，以便MAME4droid能够从中读取ROM文件。\n\n</string>
+	<string name="dialog_roms_message_4">此外，如果您选择了一个外部存储文件夹，当应用被卸载时，您的ROM文件不会被删除，您可以使用Android文件管理器将您的ROM文件移动到那里，而不需要使用电脑。</string>
+	<string name="dialog_roms_internal">内部目录</string>
+	<string name="dialog_roms_external">外部存储</string>
+	<string name="dialog_roms_file_manager">您的设备没有所需的原生Android文件管理器，无法授权读取外部存储。</string>
+	<string name="dialog_roms_folder_permissions">\n\n一些Android TV设备没有包含操作系统文件选择器，这是在Android 11及以上版本中授予应用文件夹权限所必需的。作为替代方案，选择默认选项，它使用所有设备都支持的应用媒体文件夹，该文件夹位于Android/media/[应用包名]。使用文件管理器将任何模拟器文件移动到该文件夹中，以便应用可以在不需要特殊权限的情况下访问它们。</string>
+	<string name="confirm_dialog_exit">您确定关闭软件么？</string>
+	<string name="dialog_error_message">错误</string>
+	<string name="dialog_info_message">信息</string>
+	<string name="confirm_dialog_ok">OK</string>
+	<string name="dialog_options_load_state">读取即时存档</string>
+	<string name="dialog_options_save_state">保存即时存档</string>
+	<string name="dialog_options_help">帮助</string>
+	<string name="dialog_options_settings">设置</string>
+	<string name="dialog_options_keyboard">键盘</string>
+	<string name="dialog_options_exit">退出</string>
+	<string name="dialog_options_title">从菜单中选择一个选项。</string>
+	<string name="dialog_emu_restart_title">需要重启！</string>
+	<string name="dialog_emu_restart_message">MAME4droid需要重启以使更改生效。</string>
+	<string name="dialog_dismiss">关闭</string>
+	<string name="dialog_no_permissions_title">没有权限!</string>
+	<string name="dialog_no_permissions_message">您没有权限从外部存储读取。请在Android应用设置中允许存储权限。</string>
+	
+<!--
+	Java String MainHelper
+-->	
+	<string name="installationdir_seterror_1">无法找到或创建: \'</string>
+	<string name="installationdir_seterror_2">\' 是否可写入？.\n正在恢复...</string>
+	<string name="removefiles_message">MAME的配置和NVRAM文件已删除...</string>
+	<string name="copyfiles_message_1">安装文件，\u0020</string>
+	<string name="copyfiles_message_2">请稍等...</string>
+	<string name="installing_message">安装中：\u0020</string>
+	<string name="installationdir_message_1">已创建或更新目录： \'</string>
+	<string name="installationdir_message_2">\' 用于存储即时存档，配置文件和MAME资源.\n\n注意, 拷贝或者移动您的ROM至 \'</string>
+	<string name="installationdir_message_3">\' 目录下！\n\n重要: MAME4droid 2024只能使用</string>
+	<string name="installationdir_message_4">\u0020MAME的ROM集组, 而非0.139。</string>
+	<string name="installationdir_message_5">欢迎使用 META Quest 上的 MAME4droid！\n\n您应该在 META Quest 上配对一个 Xbox One 控制器才能玩游戏，但您也可以使用触摸控制器玩光枪游戏。\n\n</string>
+	<string name="controlcustomizer_infomsg_1">只有在全屏模式下才允许进行控制布局定制</string>
+	<string name="controlcustomizer_infomsg_2">只有在触摸控制器可见时才允许自定义控制布局</string>
+	<string name="showhelp_1">当MAME4droid首次运行时，它会在您的Android设备的内部存储上为您创建一个文件夹结构。这个文件夹包含了MAME使用的所有其他文件夹以及一些基本的配置文件。</string>
+	<string name="showhelp_2">由于MAME4droid不附带游戏ROM文件，您需要将它们复制到（如果您的设备允许，您可以在选项中更改为外部存储）\'/storage/emulated/0/Android/media/com.seleuco.mame4d2024/roms\'文件夹中。</string>
+	<string name="showhelp_3">这些应该是正确命名的ZIP压缩的MAME v0.266 ROM文件，并且文件名应全部使用小写字母。\n\n重要提示：您应该在“选项/设置/输入/游戏控制器/自定义按键”中定义或映射您的Android TV游戏控制器，以避免如果控制器没有被自动检测到时，这个帮助屏幕会不断显示。\n\n</string>
+	<string name="showhelp_4">控制器上的按钮A、B、C、D、E、F分别映射到MAME的1到6号按钮。</string>
+	<string name="showhelp_5">投币（coin）按钮用于投币/增加代币。开始键（start）按钮启动1P游戏。A+开始键（start）是快进。B+开始键（start）是切换用户界面控制。开始键（start）+A+B是街机调试模式。选择键（select）+A+B是软重置。使用选择键（select）或开始键（start）用于切换MAME界面功能区。</string>
+	<string name="showhelp_6">R1 + 开始键加载一个即时存档状态。L1 + 开始键保存一个即时存档状态。在游戏进行中，开始 + 选择键可以弹出游戏内的MAME菜单（例如设置DIP，选择金手指等）...</string>
+
+<!--
+	Java String SAFHelper
+-->	
+
+	<string name="listurifiles_warn_1">正在缓存SAF文件。</string>
+	<string name="listurifiles_warn_2">\u0020读取中，请稍后...</string>
+	<string name="no_permission_read_rom_1">MAME4droid无法获得权限读取下述目录中的ROM文件：</string>
+	<string name="no_permission_read_rom_2">.\n\n再次授权或选择另一个ROM文件夹，请在MAME4droid菜单的“选项 -> 设置 -> 通用 -> 更改ROM路径”中设置。</string>
+	
+<!--
+	Java String ScraperHelper
+-->		
+	<string name="scraper_warning_nospace">媒体抓取已停止（没有足够的空间）</string>
+	<string name="scraper_warning_error">媒体抓取报错：</string>
+	<string name="scraper_warning_running">媒体抓取运行中...</string>
+	<string name="scraper_warning_ends">媒体抓取结束（您应该重新启动MAME4droid...）</string>
+
+<!--
+	Java String GameController
+-->	
+	<string name="detected_generic_controller">检测到通用控制器。您应该在设置中进行映射！</string>
+	<string name="detected_input_device">检测到输入设备：</string>
+	<string name="detected_input_device_as_p_msg1">检测到\u0020</string>
+	<string name="detected_input_device_as_p_msg2">\u0020控制器作为P</string>
+
+<!--
+	Java String Keyboard
+-->	
+	<string name="keyboard_is_enabled">键盘已启用！</string>
+	
+<!--
+	Java String Mouse
+-->	
+	<string name="mouse_is_enabled">鼠标已启用！</string>
+	
+<!--
+	Java String CheckBoxPrefWithWarn
+-->	
+	<string name="checkboxprefwithwarn_confirm">您确定吗？（需要重新启动应用程序）</string>
+	
+<!--
+	Java String DefineKeys
+-->		
+	<string name="definekeys_p1">玩家 1</string>
+	<string name="definekeys_p2">玩家 2</string>
+	<string name="definekeys_p3">玩家 3</string>
+	<string name="definekeys_p4">玩家 4</string>
+	<string name="gamepad_auto_detected_title">游戏控制器自动检测已启用！</string>
+	<string name="gamepad_auto_detected_msg1">玩家\u0020</string>
+	<string name="gamepad_auto_detected_msg2">\u0020控制器已被自动检测到！您需要禁用自动检测才能为这个玩家更改按键。</string>
+
+<!--
+	Java String KeySelect
+-->	
+	<string name="keyselect_pressbutton">请按一个键来设置 \"</string>
+	<string name="key_cancel">取消</string>
+	<string name="key_clear">清除</string>
+
+<!--
+	Java String SensitivityPrefScreen
+-->	
+	<string name="prefscreen_save">保存</string>
+	<string name="prefscreen_cancel">取消</string>
+
+<!--
+	Java String UserPreferences
+-->	
+	<string name="current_value_string">当前值是 \'</string>
+	<string name="current_values_string">当前值是 \'</string>
+	<string name="confirm_restore">您确定要恢复吗？</string>
+	<string name="confirm_restore_warning">这将删除您所有的MAME配置文件和nvram文件。这有助于将游戏恢复到默认设置，以修复MAME的键位映射问题。</string>
+
+<!--
+	Java String Render
+-->	
+	<string name="not_enough_memory_for_texture">没有足够的内存来创建纹理！</string>
+	<string name="err_create_shaders">创建预设着色器时出错！</string>
+	<string name="err_create_stock_shaders_program">创建预设着色器程序时出错！</string>
+	<string name="err_create_shaders_reverting">创建特效着色器时出错... 正在回退到预设着色器！</string>
+	<string name="err_create_effect_shaders_program">创建特效着色器程序时出错！</string>
+	<string name="reverting_stock_shader">未找到着色器配置... 正在回退到预设着色器！</string>
+	<string name="err_reading_shader_cfg">读取shader.cfg文件时出错！</string>
+
+<!--
+	Java String Emulator
+-->	
+	<string name="tilt_sensor_enabled">陀螺仪传感器已启用！</string>
+	<string name="touch_lightgun_always_enabled">触摸式光枪始终启用！</string>
+	<string name="touch_lightgun_auto_enabled">触摸式光枪自动启用！</string>
+	<string name="touch_mouse_always_enabled">触摸鼠标始终启用！</string>
+	<string name="touch_mouse_auto_enabled">触摸鼠标自动启用！</string>
+	
+<!--
+	Java String ListKeys
+-->	
+    <string name="input_label_up">方向上</string>
+    <string name="input_label_down">方向下</string>
+    <string name="input_label_left">方向左</string>
+    <string name="input_label_right">方向右</string>
+    <string name="input_label_button_a">按键A</string>
+    <string name="input_label_button_b">按键B</string>
+    <string name="input_label_button_c">按键C</string>
+    <string name="input_label_button_d">按键D</string>
+    <string name="input_label_button_e">按键E</string>
+    <string name="input_label_button_f">按键F</string>
+    <string name="input_label_button_g">按键G</string>
+    <string name="input_label_button_h">按键H</string>
+    <string name="input_label_coin">投币（选择）</string>
+    <string name="input_label_start">开始</string>
+    <string name="input_label_exit">退出</string>
+    <string name="input_label_option">选项</string>
+	<string name="input_label_title_1">MAME4droid 玩家</string>
+	<string name="input_label_title_2">\u0020的按键</string>
+	
+<!--
+	LanguageSwith
+-->	
+
+	<string name="language_setting.title">语言设置</string>
+    <string name="custom_language">自定义语言</string>
+    <string name="custom_language_summary">启用它以选择语言（禁用则为跟随系统语言）.</string>
+    <string name="select_language">选择语言</string>
+    <string name="select_language_summary">选择您喜欢的语言</string>
+	
+		<string-array name="language_entries">
+			<item>英语</item>
+			<item>简体中文</item>
+			<item>繁体中文</item>
+		</string-array>
+		<string-array name="language_values">
+			<item>en</item>
+			<item>zh-CN</item>
+			<item>zh-TW</item>
+		</string-array>
+</resources>
