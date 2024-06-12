@@ -397,7 +397,7 @@
 
 	<string name="language_setting.title">语言设置</string>
     <string name="custom_language">自定义语言</string>
-    <string name="custom_language_summary">启用它以选择语言（禁用则为跟随系统语言）.</string>
+    <string name="custom_language_summary">启用它以选择语言（禁用则为跟随系统语言）。\n注意：仅能改变软件语言，并非MAME。</string>
     <string name="select_language">选择语言</string>
     <string name="select_language_summary">选择您喜欢的语言</string>
 	
