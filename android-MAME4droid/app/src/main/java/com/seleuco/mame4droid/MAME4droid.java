@@ -80,6 +80,7 @@ import com.seleuco.mame4droid.prefs.DefineKeys;
 import com.seleuco.mame4droid.prefs.UserPreferences;
 import com.seleuco.mame4droid.render.GLRendererES10;
 import com.seleuco.mame4droid.render.GLRendererES32;
+import com.seleuco.mame4droid.prefs.LanguageSwitchActivity;
 
 public class MAME4droid extends Activity {
 
@@ -143,9 +144,8 @@ public class MAME4droid extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-
-		//init Languagesetting
-		updateLanguage(this);
+        // Initialize language setting
+        LanguageSwitchActivity.updateLanguage(this);
 
 		//android.os.Debug.waitForDebugger();
 
@@ -479,34 +479,4 @@ public class MAME4droid extends Activity {
 		}
 	}
 
-	private void updateLanguage(Context context) {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		boolean customLanguage = prefs.getBoolean("custom_language", false);
-		String language = prefs.getString("language_selection", "en");
-
-		Locale locale;
-		if (customLanguage) {
-			switch (language) {
-				case "zh-CN":
-					locale = Locale.SIMPLIFIED_CHINESE; //don't know why should writer a case for switch chinese?
-					break;
-				case "zh-TW":
-					locale = Locale.TRADITIONAL_CHINESE; 
-					break;
-				default:
-					locale = new Locale(language);
-					break;
-			}
-		} else {
-			locale = context.getResources().getConfiguration().locale;
-		}
-
-		Locale currentLocale = getResources().getConfiguration().locale;
-		if (!currentLocale.equals(locale)) {
-			Locale.setDefault(locale);
-			Configuration config = new Configuration(getResources().getConfiguration());
-			config.locale = locale;
-			getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-		}
-	}
 }

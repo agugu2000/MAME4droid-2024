@@ -76,18 +76,16 @@ public class LanguageSwitchActivity extends PreferenceActivity implements Shared
         boolean customLanguage = prefs.getBoolean("custom_language", false);
         String language = prefs.getString("language_selection", "en");
 
+        //so we can use "zh-CN" "zh_TW" "en" :)
+        language = language.replace("-", "_");
+        String[] languageparts = language.split("_");
+
         Locale locale;
         if (customLanguage) {
-            switch (language) {
-                case "zh-CN":
-                    locale = Locale.SIMPLIFIED_CHINESE; //don't know why should writer a case for switch chinese?
-                    break;
-                case "zh-TW":
-                    locale = Locale.TRADITIONAL_CHINESE; 
-                    break;
-                default:
-                    locale = new Locale(language);
-                    break;
+            if (languageparts.length == 2) {
+                locale = new Locale(languageparts[0], languageparts[1]);
+            } else {
+                locale = new Locale(language);
             }
         } else {
             locale = context.getResources().getConfiguration().locale;
