@@ -314,6 +314,7 @@ public class MAME4droid extends Activity {
 	protected void onResume() {
 		Log.d("EMULATOR", "onResume " + this);
 		super.onResume();
+		LanguageSwitchActivity.updateLanguage(this);
 
 		if (prefsHelper != null)
 			prefsHelper.resume();
