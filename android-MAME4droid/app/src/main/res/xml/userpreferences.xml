@@ -2,13 +2,13 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/configuration.title">
+	<PreferenceCategory android:title="@string/configuration.title">
 
-    <PreferenceScreen
-            android:key="PREFSCR_EMU"
-            android:title="@string/emulation.title"
-            android:summary="@string/emulation.summary"
-            android:persistent="false">
+	<PreferenceScreen
+			android:key="PREFSCR_EMU"
+			android:title="@string/emulation.title"
+			android:summary="@string/emulation.summary"
+			android:persistent="false">
 
 		<com.seleuco.mame4droid.prefs.ListPrefWithWarn
 			android:entries="@array/pref_resolution_options"
@@ -22,7 +22,7 @@
 			android:title="@string/frontend_resolution.title"
 			android:key="PREF_EMU_RESOLUTION_OSD_2"
 			android:entryValues="@array/pref_osd_resolution_values"
-			android:defaultValue="9" />
+			android:defaultValue="1" />
 <!--
 		<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_EMU_ONE_PROCESSOR"
 			android:title="@string/only_one_processor.title" android:summary="@string/only_one_processor.summary"
@@ -32,7 +32,7 @@
 			android:title="@string/speed_hacks.title" android:summary="@string/speed_hacks.summary"
 			android:defaultValue="False" />
 
-	    <com.seleuco.mame4droid.prefs.ListPrefWithWarn
+		<com.seleuco.mame4droid.prefs.ListPrefWithWarn
 			android:entries="@array/pref_sound_options"
 			android:title="@string/sound.title"
 			android:key="PREF_EMU_SOUND"
@@ -83,30 +83,30 @@
 			android:title="@string/drc_use_c.title" android:summary="@string/drc_use_c.summary"
 			android:defaultValue="true" android:dependency="PREF_EMU_DISABLE_DRC_2" />
 
-	    <PreferenceScreen android:key="vector" android:title="@string/vector.title"
-	        android:summary="@string/vector.summary" android:persistent="false">
+		<PreferenceScreen android:key="vector" android:title="@string/vector.title"
+			android:summary="@string/vector.summary" android:persistent="false">
 
-	    <com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_BEAM2X"
+		<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_BEAM2X"
 			android:title="@string/beam_2x.title" android:summary="@string/beam_2x.summary"
 			android:defaultValue="true" />
 
-	    <com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_FLICKER"
+		<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_FLICKER"
 			android:title="@string/flicker.title" android:summary="@string/flicker.summary"
 			android:defaultValue="false" />
 
-	    </PreferenceScreen>
+		</PreferenceScreen>
 
-	    <PreferenceScreen android:key="defaultData"
+		<PreferenceScreen android:key="defaultData"
 			android:title="@string/default_mame_data.title" android:summary="@string/default_mame_data.summary" />
 
 	</PreferenceScreen>
 
 
 	<PreferenceScreen android:key="inputSettings" android:title="@string/input.title"
-	    android:summary="@string/input.summary" android:persistent="false">
+		android:summary="@string/input.summary" android:persistent="false">
 
-    <PreferenceScreen android:key="touchController" android:title="@string/touch_controller.title"
-	        android:summary="@string/touch_controller.summary" android:persistent="false">
+	<PreferenceScreen android:key="touchController" android:title="@string/touch_controller.title"
+			android:summary="@string/touch_controller.summary" android:persistent="false">
 
 		<ListPreference
 			android:entries="@array/pref_controller_type_options"
@@ -115,7 +115,7 @@
 			android:entryValues="@array/pref_controller_type_values"
 			android:defaultValue="1" />
 
-        <PreferenceScreen android:key="customControlLayout"
+		<PreferenceScreen android:key="customControlLayout"
 			android:title="@string/customize_layout.title" android:summary="@string/customize_layout.summary" />
 
 		<PreferenceScreen android:key="defaultControlLayout"
@@ -169,7 +169,7 @@
 			android:title="@string/digital_dead_zone.title" android:summary="@string/digital_dead_zone.summary"
 			android:defaultValue="true" />
 
-	    <ListPreference
+		<ListPreference
 			android:entries="@array/pref_dz_options"
 			android:title="@string/analog_dead_zone.title"
 			android:key="PREF_ANALOG_DZ"
@@ -178,8 +178,8 @@
 
 	</PreferenceScreen>
 
-    <PreferenceScreen android:key="externalController" android:title="@string/game_controller.title"
-	        android:summary="@string/game_controller.summary" android:persistent="false">
+	<PreferenceScreen android:key="externalController" android:title="@string/game_controller.title"
+			android:summary="@string/game_controller.summary" android:persistent="false">
 
 		<CheckBoxPreference android:key="PREF_CONTROLLER_AUTODETECT"
 			android:title="@string/controller_autodetect.title" android:summary="@string/controller_autodetect.summary"
@@ -208,14 +208,14 @@
 			android:title="@string/hide_all_buttons_in_game.title" android:summary="@string/hide_all_buttons_in_game.summary"
 			android:defaultValue="false"/>
 
-	     <ListPreference
+		 <ListPreference
 			android:entries="@array/pref_dz_options"
 			android:title="@string/analog_dead_zone_1.title"
 			android:key="PREF_GAMEPAD_DZ"
 			android:entryValues="@array/pref_dz_values"
 			android:defaultValue="3" />
 
-    </PreferenceScreen>
+	</PreferenceScreen>
 
 		<PreferenceScreen android:key="mouse" android:title="@string/mouse.title"
 			android:summary="@string/mouse.summary" android:persistent="false">
@@ -283,14 +283,14 @@
 
 
 	<PreferenceScreen android:key="tiltController" android:title="@string/tilt_controller.title"
-	    android:summary="@string/tilt_controller.summary" android:persistent="false">
+		android:summary="@string/tilt_controller.summary" android:persistent="false">
 
 		<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_TILT_SENSOR"
 			android:title="@string/tilt_sensor.title"
 			android:summary="@string/tilt_sensor.summary"
 			android:defaultValue="false" />
 
-	    <ListPreference
+		<ListPreference
 			android:entries="@array/pref_dz_options"
 			android:title="@string/dead_zone.title"
 			android:key="PREF_TILT_DZ"
@@ -326,7 +326,7 @@
 			android:title="@string/swap_z_y_axes.title" android:summary="@string/swap_z_y_axes.summary"
 			android:defaultValue="false"  android:dependency="PREF_TILT_SENSOR"/>
 
-    </PreferenceScreen>
+	</PreferenceScreen>
 
 
 		<ListPreference
@@ -344,11 +344,11 @@
 			android:title="@string/override_sat_and_dz.title" android:summary="@string/override_sat_and_dz.summary"
 			android:defaultValue="True" />
 
-	    <CheckBoxPreference android:key="PREF_PXASP1"
+		<CheckBoxPreference android:key="PREF_PXASP1"
 			android:title="@string/p4_p3_p2_as_p1.title" android:summary="@string/p4_p3_p2_as_p1.summary"
 			android:defaultValue="False" />
 
-    </PreferenceScreen>
+	</PreferenceScreen>
 
 		<PreferenceScreen
 			android:key="shaders"
@@ -418,8 +418,8 @@
 
 		</PreferenceScreen>
 
-    <PreferenceScreen android:key="general" android:title="@string/general.title"
-        android:summary="@string/general.summary" android:persistent="false">
+	<PreferenceScreen android:key="general" android:title="@string/general.title"
+		android:summary="@string/general.summary" android:persistent="false">
 
 		<PreferenceScreen android:key="changeRomPath"
 			android:title="@string/change_roms_path.title" android:summary="@string/change_roms_path.summary" />
@@ -447,7 +447,7 @@
 			android:defaultValue="true" />
 
 
-	    <com.seleuco.mame4droid.prefs.ListPrefWithWarn android:key="PREF_GLOBAL_NAVBAR_MODE"
+		<com.seleuco.mame4droid.prefs.ListPrefWithWarn android:key="PREF_GLOBAL_NAVBAR_MODE"
 			android:title="@string/navigation_bar_mode.title"
 			android:entries="@array/pref_navbar_options"
 			android:entryValues="@array/pref_navbar_values"
@@ -465,16 +465,16 @@
 			android:title="@string/scale_beyond_boundaries.title" android:summary="@string/scale_beyond_boundaries.summary"
 			android:defaultValue="true" />
 
-	    <CheckBoxPreference android:key="PREF_GLOBAL_OVERSCAN"
+		<CheckBoxPreference android:key="PREF_GLOBAL_OVERSCAN"
 			android:title="@string/tv_overscan.title" android:summary="@string/tv_overscan.summary"
 			android:defaultValue="false" />
 
 	</PreferenceScreen>
 
-    <PreferenceScreen android:key="advanced" android:title="@string/advanced.title"
-        android:summary="@string/advanced.summary" android:persistent="false">
+	<PreferenceScreen android:key="advanced" android:title="@string/advanced.title"
+		android:summary="@string/advanced.summary" android:persistent="false">
 
-       <com.seleuco.mame4droid.prefs.ListPrefWithWarn
+	   <com.seleuco.mame4droid.prefs.ListPrefWithWarn
 			android:entries="@array/pref_global_video_render_options"
 			android:title="@string/video_engine.title"
 			android:key="PREF_GLOBAL_VIDEO_RENDER_MODE"
@@ -486,7 +486,7 @@
 			android:entryValues="@array/pref_sound_engine_values"
 			android:defaultValue="1" />
 
-        <com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_DOUBLE_BUFFER"
+		<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn android:key="PREF_DOUBLE_BUFFER"
 			android:title="@string/double_buffer.title" android:summary="@string/double_buffer.summary"
 			android:defaultValue="True" />
 
@@ -495,11 +495,11 @@
 			android:entryValues="@array/pref_low_norm_or_hight_values"
 			android:defaultValue="2" />
 
-        <com.seleuco.mame4droid.prefs.EditTextPrefWithWarn
-                android:dialogTitle="@string/installation_path_dialog.title"
-                android:key="PREF_INSTALLATION_DIR"
-                android:title="@string/installation_path.title"
-                android:defaultValue=""/>
+		<com.seleuco.mame4droid.prefs.EditTextPrefWithWarn
+				android:dialogTitle="@string/installation_path_dialog.title"
+				android:key="PREF_INSTALLATION_DIR"
+				android:title="@string/installation_path.title"
+				android:defaultValue=""/>
 
 		<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn  android:key="PREF_MAMEINI"
 			android:title="@string/use_mame_ini_for_paths.title" android:summary="@string/use_mame_ini_for_paths.summary"
@@ -561,23 +561,23 @@
 
 	</PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/language_setting.title">
+	<PreferenceCategory android:title="@string/language_setting.title">
 
-        <com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn
-            android:key="custom_language"
-            android:title="@string/custom_language"
-            android:summary="@string/custom_language_summary"
-            android:defaultValue="false" />
+		<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn
+			android:key="custom_language"
+			android:title="@string/custom_language"
+			android:summary="@string/custom_language_summary"
+			android:defaultValue="false" />
 
-        <com.seleuco.mame4droid.prefs.ListPrefWithWarn
-            android:key="language_selection"
-            android:title="@string/select_language"
-            android:summary="@string/select_language_summary"
-            android:entries="@array/language_entries"
-            android:entryValues="@array/language_values"
-            android:defaultValue="en"
-            android:dependency="custom_language" />
+		<com.seleuco.mame4droid.prefs.ListPrefWithWarn
+			android:key="language_selection"
+			android:title="@string/select_language"
+			android:summary="@string/select_language_summary"
+			android:entries="@array/language_entries"
+			android:entryValues="@array/language_values"
+			android:defaultValue="en"
+			android:dependency="custom_language" />
 
-    </PreferenceCategory>
+	</PreferenceCategory>
 
 </PreferenceScreen>
