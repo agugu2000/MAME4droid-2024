@@ -10,11 +10,11 @@
 <!--
 	AndroidManifest
 -->	
-    <string name="settings_label">MAME4droid 設定</string>
-    <string name="help_label">MAME4droid 幫助</string>
-    <string name="define_keys_label">MAME4droid 自定義按鍵</string>
-    <string name="player_keys_label">MAME4droid 玩家按鍵</string>
-    <string name="select_key_label">選擇按鍵</string>
+	<string name="settings_label">MAME4droid 設定</string>
+	<string name="help_label">MAME4droid 幫助</string>
+	<string name="define_keys_label">MAME4droid 自定義按鍵</string>
+	<string name="player_keys_label">MAME4droid 玩家按鍵</string>
+	<string name="select_key_label">選擇按鍵</string>
 	
 <!--
 	Main UI String
@@ -372,22 +372,22 @@
 <!--
 	Java String ListKeys
 -->	
-    <string name="input_label_up">方向上</string>
-    <string name="input_label_down">方向下</string>
-    <string name="input_label_left">方向左</string>
-    <string name="input_label_right">方向右</string>
-    <string name="input_label_button_a">按鍵A</string>
-    <string name="input_label_button_b">按鍵B</string>
-    <string name="input_label_button_c">按鍵C</string>
-    <string name="input_label_button_d">按鍵D</string>
-    <string name="input_label_button_e">按鍵E</string>
-    <string name="input_label_button_f">按鍵F</string>
-    <string name="input_label_button_g">按鍵G</string>
-    <string name="input_label_button_h">按鍵H</string>
-    <string name="input_label_coin">投幣（選擇）</string>
-    <string name="input_label_start">開始</string>
-    <string name="input_label_exit">退出</string>
-    <string name="input_label_option">選項</string>
+	<string name="input_label_up">方向上</string>
+	<string name="input_label_down">方向下</string>
+	<string name="input_label_left">方向左</string>
+	<string name="input_label_right">方向右</string>
+	<string name="input_label_button_a">按鍵A</string>
+	<string name="input_label_button_b">按鍵B</string>
+	<string name="input_label_button_c">按鍵C</string>
+	<string name="input_label_button_d">按鍵D</string>
+	<string name="input_label_button_e">按鍵E</string>
+	<string name="input_label_button_f">按鍵F</string>
+	<string name="input_label_button_g">按鍵G</string>
+	<string name="input_label_button_h">按鍵H</string>
+	<string name="input_label_coin">投幣（選擇）</string>
+	<string name="input_label_start">開始</string>
+	<string name="input_label_exit">退出</string>
+	<string name="input_label_option">選項</string>
 	<string name="input_label_title_1">MAME4droid 玩家</string>
 	<string name="input_label_title_2">\u0020的按鍵</string>
 	
@@ -396,10 +396,10 @@
 -->	
 
 	<string name="language_setting.title">語言設定</string>
-    <string name="custom_language">自定義語言</string>
-    <string name="custom_language_summary">啓用它以選擇語言（禁用則爲跟隨系統語言）。\n注意：僅能改變軟體語言，并非MAME。</string>
-    <string name="select_language">選擇語言</string>
-    <string name="select_language_summary">選擇您喜歡的語言</string>
+	<string name="custom_language">自定義語言</string>
+	<string name="custom_language_summary">啓用它以選擇語言（禁用則爲跟隨系統語言）。\n注意：僅能改變軟體語言，并非MAME。</string>
+	<string name="select_language">選擇語言</string>
+	<string name="select_language_summary">選擇您喜歡的語言</string>
 	
 		<string-array name="language_entries">
 			<item>英語</item>
