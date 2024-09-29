@@ -272,7 +272,7 @@
 	<string name="controlcustomizer_infomsg_2">只有在触摸控制器可见时才允许自定义控制布局</string>
 	<string name="showhelp_1">当MAME4droid首次运行时，它会在您的Android设备的内部存储上为您创建一个文件夹结构。这个文件夹包含了MAME使用的所有其他文件夹以及一些基本的配置文件。</string>
 	<string name="showhelp_2">由于MAME4droid不附带游戏ROM文件，您需要将它们复制到（如果您的设备允许，您可以在选项中更改为外部存储）\'/storage/emulated/0/Android/media/com.seleuco.mame4d2024/roms\'文件夹中。</string>
-	<string name="showhelp_3">这些应该是正确命名的ZIP压缩的MAME v0.268 ROM文件，并且文件名应全部使用小写字母。\n\n重要提示：您应该在“选项/设置/输入/游戏控制器/自定义按键”中定义或映射您的Android TV游戏控制器，以避免如果控制器没有被自动检测到时，这个帮助屏幕会不断显示。\n\n</string>
+	<string name="showhelp_3">这些应该是正确命名的ZIP压缩的MAME v0.269 ROM文件，并且文件名应全部使用小写字母。\n\n重要提示：您应该在“选项/设置/输入/游戏控制器/自定义按键”中定义或映射您的Android TV游戏控制器，以避免如果控制器没有被自动检测到时，这个帮助屏幕会不断显示。\n\n</string>
 	<string name="showhelp_4">控制器上的按钮A、B、C、D、E、F分别映射到MAME的1到6号按钮。</string>
 	<string name="showhelp_5">投币（coin）按钮用于投币/增加代币。开始键（start）按钮启动1P游戏。A+开始键（start）是快进。B+开始键（start）是切换用户界面控制。开始键（start）+A+B是街机调试模式。选择键（select）+A+B是软重置。使用选择键（select）或开始键（start）用于切换MAME界面功能区。</string>
 	<string name="showhelp_6">R1 + 开始键加载一个即时存档状态。L1 + 开始键保存一个即时存档状态。在游戏进行中，开始 + 选择键可以弹出游戏内的MAME菜单（例如设置DIP，选择金手指等）...</string>
