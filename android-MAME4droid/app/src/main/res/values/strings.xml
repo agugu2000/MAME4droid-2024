@@ -5,7 +5,7 @@
     <string name="menu_quit">Exit App</string>
     <string name="app_name">MAME4droid 2024</string>
     <string name="don_t_bother">Don\'t ask again</string>
-	<string name="mame_version">0.270</string>
+	<string name="mame_version">0.271</string>
 
 <!--
 	AndroidManifest
@@ -272,7 +272,7 @@
 	<string name="controlcustomizer_infomsg_2">Control layout customization is only allowed when touch controller is visible</string>
 	<string name="showhelp_1">When MAME4droid is first run, it will create a folder structure for you on the internal memory of your Android device. This folder contains all the other folders MAME uses as well as some basic configuration files.</string>
 	<string name="showhelp_2">Since MAME4droid does not come with game ROM files, you will need to copy them to (You can change it in options to external storage if your device allows it) \'/storage/emulated/0/Android/media/com.seleuco.mame4d2024/roms\' folder (</string>
-	<string name="showhelp_3">the one that applies) yourself. These should be properly named, ZIPped MAME v0.270 ROMs files with the filenames in all lower case.\n\nImportant: You should define or map your Android TV game controller on \'options/settings/input/External controller/define Keys\' to avoid this help screen constantly showing if the controller is not auto detected.\n\n</string>
+	<string name="showhelp_3">the one that applies) yourself. These should be properly named, ZIPped MAME v0.271 ROMs files with the filenames in all lower case.\n\nImportant: You should define or map your Android TV game controller on \'options/settings/input/External controller/define Keys\' to avoid this help screen constantly showing if the controller is not auto detected.\n\n</string>
 	<string name="showhelp_4">Controls: Buttons A,B,C,D,E,F on the controller map to buttons Button MAME 1 to 6 buttons.</string>
 	<string name="showhelp_5">\u0020Coin button inserts coin/adds credit.START button starts 1P game. A+START is fast forward. B+START is toggle UI controls. START+A+B is service mode. SELECT+A+B is soft reset. Use SELECT(coin) or START for UI navigation.</string>
 	<string name="showhelp_6">R1 + START loads a save state. L1 + START saves a save state. START + SELECT when gaming accesses the game\'s MAME menu (dip switches, etc)...</string>
